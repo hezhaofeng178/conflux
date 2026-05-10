@@ -389,6 +389,62 @@ async def list_subnets(request: Request):
     return subnets
 
 
+@api_router.get("/vault/content")
+async def get_vault_content(
+    request: Request,
+    label: str = Query(..., description="节点标签（概念名称）"),
+    source: Optional[str] = Query(None, description="来源书籍名（可选，用于精确定位）"),
+):
+    """根据节点标签查找对应的 vault 知识讲解 Markdown 内容。
+    
+    在所有 vault 目录中搜索匹配的 .md 文件，返回内容用于前端渲染。
+    """
+    from conflux.web.app import STATIC_DIR
+
+    # vault 目录相对于 data_dir 或默认 output/vault
+    data_dir = getattr(request.app.state, "data_dir", Path("data"))
+    vault_dirs = []
+
+    # 尝试多个可能的 vault 路径
+    candidates = [
+        Path("output/vault"),
+        data_dir.parent / "output" / "vault",
+        data_dir / ".." / "output" / "vault",
+    ]
+    for c in candidates:
+        resolved = c.resolve()
+        if resolved.exists():
+            vault_dirs.append(resolved)
+
+    # 也递归搜索 data 目录下是否有 vault
+    for p in data_dir.rglob("vault"):
+        if p.is_dir():
+            vault_dirs.append(p.resolve())
+
+    # 去重
+    vault_dirs = list(dict.fromkeys(vault_dirs))
+
+    for vault_dir in vault_dirs:
+        # 优先精确匹配文件名
+        md_name = f"{label}.md"
+        # 在所有子目录中搜索
+        for md_file in vault_dir.rglob("*.md"):
+            if md_file.name == md_name:
+                # 如果指定了 source，验证目录名匹配
+                if source and source not in md_file.parent.name:
+                    continue
+                content = md_file.read_text(encoding="utf-8")
+                rel_path = md_file.relative_to(vault_dir.parent if vault_dir.parent.name == "output" else vault_dir)
+                return {
+                    "found": True,
+                    "content": content,
+                    "path": str(rel_path.as_posix()),
+                    "label": label,
+                }
+
+    return {"found": False, "content": None, "path": None, "label": label}
+
+
 @api_router.get("/health")
 async def health_check():
     """健康检查。"""

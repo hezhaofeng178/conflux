@@ -326,6 +326,169 @@
             z-index: 100;
             display: none;
         }
+
+        /* Detail Panel (Right Sidebar) */
+        #detail-panel {
+            position: fixed;
+            top: 0;
+            right: -480px;
+            width: 480px;
+            height: 100vh;
+            background: var(--surface);
+            border-left: 1px solid var(--border);
+            z-index: 200;
+            transition: right 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            box-shadow: -4px 0 20px rgba(0,0,0,0.3);
+        }
+
+        #detail-panel.open {
+            right: 0;
+        }
+
+        #detail-panel .panel-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 1rem 1.25rem;
+            border-bottom: 1px solid var(--border);
+            flex-shrink: 0;
+        }
+
+        #detail-panel .panel-header h3 {
+            font-size: 1rem;
+            font-weight: 600;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            flex: 1;
+            margin-right: 0.75rem;
+        }
+
+        #detail-panel .close-btn {
+            background: none;
+            border: none;
+            color: var(--text-muted);
+            cursor: pointer;
+            font-size: 1.25rem;
+            padding: 0.25rem;
+            line-height: 1;
+        }
+
+        #detail-panel .close-btn:hover { color: var(--text); }
+
+        #detail-panel .panel-body {
+            flex: 1;
+            overflow-y: auto;
+            padding: 1.25rem;
+        }
+
+        .detail-section {
+            margin-bottom: 1.25rem;
+        }
+
+        .detail-section .section-title {
+            font-size: 0.7rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            color: var(--text-muted);
+            margin-bottom: 0.5rem;
+            letter-spacing: 0.05em;
+        }
+
+        .detail-section .badge-tag {
+            display: inline-block;
+            padding: 0.2rem 0.5rem;
+            border-radius: 0.25rem;
+            font-size: 0.75rem;
+            font-weight: 600;
+            background: var(--surface-alt);
+            color: var(--text);
+            margin-right: 0.35rem;
+            margin-bottom: 0.35rem;
+        }
+
+        .badge-tag.concept { background: #6366f1; color: #fff; }
+        .badge-tag.document { background: #10b981; color: #fff; }
+        .badge-tag.chapter { background: #3b82f6; color: #fff; }
+        .badge-tag.claim { background: #f59e0b; color: #000; }
+        .badge-tag.conflict { background: #ef4444; color: #fff; }
+
+        .neighbor-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .neighbor-list li {
+            padding: 0.5rem 0.6rem;
+            border-radius: 0.4rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: background 0.15s;
+            font-size: 0.85rem;
+        }
+
+        .neighbor-list li:hover {
+            background: var(--surface-alt);
+        }
+
+        .neighbor-list .dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            flex-shrink: 0;
+        }
+
+        .vault-content {
+            background: var(--bg);
+            border: 1px solid var(--border);
+            border-radius: 0.6rem;
+            padding: 1rem;
+            font-size: 0.85rem;
+            line-height: 1.7;
+            white-space: pre-wrap;
+            word-break: break-all;
+            max-height: 50vh;
+            overflow-y: auto;
+        }
+
+        .vault-content h1 { font-size: 1.1rem; margin: 0.5rem 0; color: var(--primary-light); }
+        .vault-content h2 { font-size: 0.95rem; margin: 0.75rem 0 0.4rem; color: var(--text); border-bottom: 1px solid var(--border); padding-bottom: 0.25rem; }
+        .vault-content h3 { font-size: 0.85rem; margin: 0.5rem 0 0.3rem; }
+        .vault-content ul { padding-left: 1.2rem; margin: 0.25rem 0; }
+        .vault-content li { margin: 0.15rem 0; }
+        .vault-content strong { color: var(--primary-light); }
+        .vault-content .frontmatter { display: none; }
+        .vault-content hr { border: none; border-top: 1px solid var(--border); margin: 0.75rem 0; }
+
+        .view-vault-btn {
+            display: block;
+            width: 100%;
+            padding: 0.6rem 1rem;
+            background: var(--primary);
+            color: #fff;
+            border: none;
+            border-radius: 0.5rem;
+            cursor: pointer;
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-align: center;
+            transition: opacity 0.2s;
+            margin-top: 0.5rem;
+        }
+
+        .view-vault-btn:hover { opacity: 0.85; }
+        .view-vault-btn.loading { opacity: 0.6; pointer-events: none; }
+
+        .detail-loading {
+            text-align: center;
+            color: var(--text-muted);
+            padding: 2rem;
+        }
     </style>
 </head>
 <body>
@@ -400,6 +563,17 @@
     <div class="modal" id="conflict-modal-content"></div>
 </div>
 
+<!-- Graph Node Detail Panel (Right Sidebar) -->
+<div id="detail-panel">
+    <div class="panel-header">
+        <h3 id="detail-header">节点详情</h3>
+        <button class="close-btn" onclick="closeDetailPanel()">✕</button>
+    </div>
+    <div class="panel-body" id="detail-body">
+        <div class="detail-loading">点击图谱中的节点查看详情</div>
+    </div>
+</div>
+
 <script>
 // ─── State ───────────────────────────────────────────────────
 const API_BASE = '/api';
@@ -447,8 +621,21 @@ async function loadStats() {
     }
 }
 
-// ─── Graph (D3 Force) ────────────────────────────────────────
-let simulation = null;
+// ─── Graph with Click Interaction ─────────────────────────────
+let selectedNodeId = null;
+let graphDataCache = null;       // 缓存当前图谱数据
+let nodePositionMap = {};        // node_id → {x, y}
+
+function getNodeColor(type) {
+    const colors = {
+        concept: '#6366f1',
+        document: '#10b981',
+        chapter: '#3b82f6',
+        claim: '#f59e0b',
+        conflict: '#ef4444',
+    };
+    return colors[type] || '#6366f1';
+}
 
 async function loadGraph() {
     try {
@@ -460,6 +647,7 @@ async function loadGraph() {
             return;
         }
 
+        graphDataCache = data;
         renderGraph(data);
     } catch (e) {
         console.error('Graph load failed:', e);
@@ -475,15 +663,6 @@ function renderGraph(data) {
     svg.setAttribute('width', width);
     svg.setAttribute('height', height);
     svg.innerHTML = '';
-
-    // Color mapping
-    const typeColors = {
-        concept: '#6366f1',
-        document: '#10b981',
-        chapter: '#3b82f6',
-        claim: '#f59e0b',
-        conflict: '#ef4444',
-    };
 
     // Build SVG elements
     const g = document.createElementNS('http://www.w3.org/2000/svg', 'g');
@@ -508,29 +687,55 @@ function renderGraph(data) {
     g.appendChild(nodeGroup);
 
     data.nodes.forEach(node => {
+        // Group for better hit area
+        const group = document.createElementNS('http://www.w3.org/2000/svg', 'g');
+        group.style.cursor = 'pointer';
+        group.dataset.id = node.id;
+
+        // Larger invisible hit area
+        const hitArea = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
+        hitArea.setAttribute('r', 14);
+        hitArea.setAttribute('fill', 'transparent');
+        group.appendChild(hitArea);
+
+        // Visible circle
         const circle = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
         circle.setAttribute('r', 6);
-        circle.setAttribute('fill', typeColors[node.node_type] || '#6366f1');
+        circle.setAttribute('fill', getNodeColor(node.node_type));
         circle.setAttribute('stroke', '#1e293b');
         circle.setAttribute('stroke-width', '1.5');
-        circle.dataset.id = node.id;
-        circle.style.cursor = 'pointer';
+        circle.classList.add('node-circle');
+        group.appendChild(circle);
 
-        // Tooltip
-        circle.addEventListener('mouseenter', (e) => {
+        // Tooltip on hover
+        group.addEventListener('mouseenter', (e) => {
             const tooltip = document.getElementById('node-tooltip');
-            tooltip.textContent = `${node.label} (${node.node_type})`;
+            tooltip.textContent = `${node.label} (${node.node_type}) · 点击查看详情`;
             tooltip.style.display = 'block';
-            tooltip.style.left = (e.clientX - svg.parentElement.getBoundingClientRect().left + 10) + 'px';
-            tooltip.style.top = (e.clientY - svg.parentElement.getBoundingClientRect().top - 30) + 'px';
+            const container = svg.parentElement;
+            const cr = container.getBoundingClientRect();
+            tooltip.style.left = (e.clientX - cr.left + 12) + 'px';
+            tooltip.style.top = (e.clientY - cr.top - 30) + 'px';
         });
-        circle.addEventListener('mouseleave', () => {
+        group.addEventListener('mousemove', (e) => {
+            const tooltip = document.getElementById('node-tooltip');
+            const container = svg.parentElement;
+            const cr = container.getBoundingClientRect();
+            tooltip.style.left = (e.clientX - cr.left + 12) + 'px';
+            tooltip.style.top = (e.clientY - cr.top - 30) + 'px';
+        });
+        group.addEventListener('mouseleave', () => {
             document.getElementById('node-tooltip').style.display = 'none';
         });
 
-        nodeGroup.appendChild(circle);
+        // Click to open detail panel
+        group.addEventListener('click', () => {
+            openNodeDetail(node.id);
+        });
 
-        // Label
+        nodeGroup.appendChild(group);
+
+        // Label text
         const text = document.createElementNS('http://www.w3.org/2000/svg', 'text');
         text.textContent = node.label.length > 8 ? node.label.slice(0, 8) + '…' : node.label;
         text.setAttribute('font-size', '9');
@@ -538,33 +743,35 @@ function renderGraph(data) {
         text.setAttribute('dy', '15');
         text.setAttribute('text-anchor', 'middle');
         text.dataset.id = node.id;
+        text.style.cursor = 'pointer';
+        text.addEventListener('click', () => {
+            openNodeDetail(node.id);
+        });
         nodeGroup.appendChild(text);
     });
 
-    // Simple force simulation (no D3 dependency)
-    const nodes = data.nodes.map(n => ({ ...n, x: width/2 + (Math.random()-0.5)*200, y: height/2 + (Math.random()-0.5)*200, vx: 0, vy: 0 }));
-    const nodeMap = {};
-    nodes.forEach(n => nodeMap[n.id] = n);
+    // Simple force simulation
+    const positions = data.nodes.map(n => ({ ...n, x: width/2 + (Math.random()-0.5)*200, y: height/2 + (Math.random()-0.5)*200, vx: 0, vy: 0 }));
+    nodePositionMap = {};
+    positions.forEach(n => nodePositionMap[n.id] = n);
 
-    const edges = data.edges.map(e => ({ source: nodeMap[e.source], target: nodeMap[e.target] })).filter(e => e.source && e.target);
+    const simEdges = data.edges.map(e => ({ source: nodePositionMap[e.source], target: nodePositionMap[e.target] })).filter(e => e.source && e.target);
 
     function tick() {
-        // Repulsion
-        for (let i = 0; i < nodes.length; i++) {
-            for (let j = i+1; j < nodes.length; j++) {
-                let dx = nodes[j].x - nodes[i].x;
-                let dy = nodes[j].y - nodes[i].y;
+        for (let i = 0; i < positions.length; i++) {
+            for (let j = i+1; j < positions.length; j++) {
+                let dx = positions[j].x - positions[i].x;
+                let dy = positions[j].y - positions[i].y;
                 let dist = Math.sqrt(dx*dx + dy*dy) || 1;
                 let force = 500 / (dist * dist);
-                nodes[i].vx -= dx/dist * force;
-                nodes[i].vy -= dy/dist * force;
-                nodes[j].vx += dx/dist * force;
-                nodes[j].vy += dy/dist * force;
+                positions[i].vx -= dx/dist * force;
+                positions[i].vy -= dy/dist * force;
+                positions[j].vx += dx/dist * force;
+                positions[j].vy += dy/dist * force;
             }
         }
 
-        // Attraction
-        edges.forEach(e => {
+        simEdges.forEach(e => {
             let dx = e.target.x - e.source.x;
             let dy = e.target.y - e.source.y;
             let dist = Math.sqrt(dx*dx + dy*dy) || 1;
@@ -575,8 +782,7 @@ function renderGraph(data) {
             e.target.vy -= dy/dist * force;
         });
 
-        // Center gravity
-        nodes.forEach(n => {
+        positions.forEach(n => {
             n.vx += (width/2 - n.x) * 0.001;
             n.vy += (height/2 - n.y) * 0.001;
             n.vx *= 0.9;
@@ -587,30 +793,32 @@ function renderGraph(data) {
             n.y = Math.max(20, Math.min(height-20, n.y));
         });
 
-        // Update SVG
-        const circles = nodeGroup.querySelectorAll('circle');
-        const texts = nodeGroup.querySelectorAll('text');
-        const lines = edgeGroup.querySelectorAll('line');
+        // Update positions
+        const allGroups = nodeGroup.querySelectorAll('g');
+        const allTexts = nodeGroup.querySelectorAll('text');
+        const allLines = edgeGroup.querySelectorAll('line');
 
-        circles.forEach((circle, i) => {
-            const node = nodes.find(n => n.id === circle.dataset.id);
-            if (node) {
-                circle.setAttribute('cx', node.x);
-                circle.setAttribute('cy', node.y);
+        allGroups.forEach(group => {
+            const pos = nodePositionMap[group.dataset.id];
+            if (pos) {
+                group.querySelectorAll('circle').forEach(c => {
+                    c.setAttribute('cx', pos.x);
+                    c.setAttribute('cy', pos.y);
+                });
             }
         });
 
-        texts.forEach((text, i) => {
-            const node = nodes.find(n => n.id === text.dataset.id);
-            if (node) {
-                text.setAttribute('x', node.x);
-                text.setAttribute('y', node.y);
+        allTexts.forEach(text => {
+            const pos = nodePositionMap[text.dataset.id];
+            if (pos) {
+                text.setAttribute('x', pos.x);
+                text.setAttribute('y', pos.y);
             }
         });
 
-        lines.forEach(line => {
-            const s = nodeMap[line.dataset.source];
-            const t = nodeMap[line.dataset.target];
+        allLines.forEach(line => {
+            const s = nodePositionMap[line.dataset.source];
+            const t = nodePositionMap[line.dataset.target];
             if (s && t) {
                 line.setAttribute('x1', s.x);
                 line.setAttribute('y1', s.y);
@@ -620,7 +828,6 @@ function renderGraph(data) {
         });
     }
 
-    // Run simulation
     let iter = 0;
     function animate() {
         tick();
@@ -628,6 +835,210 @@ function renderGraph(data) {
         if (iter < 200) requestAnimationFrame(animate);
     }
     animate();
+}
+
+// ─── Node Detail Panel ─────────────────────────────────────────
+
+async function openNodeDetail(nodeId) {
+    selectedNodeId = nodeId;
+
+    const panel = document.getElementById('detail-panel');
+    const header = document.getElementById('detail-header');
+    const body = document.getElementById('detail-body');
+
+    panel.classList.add('open');
+
+    // Show loading
+    header.textContent = '加载中...';
+    body.innerHTML = '<div class="detail-loading"><div class="spinner" style="margin:0 auto 0.5rem;"></div>加载节点详情...</div>';
+
+    try {
+        // Find local node info from graph cache
+        let localNode = null;
+        if (graphDataCache) {
+            localNode = graphDataCache.nodes.find(n => n.id === nodeId);
+        }
+
+        // Fetch node detail from API
+        const resp = await fetch(`${API_BASE}/graph/node/${nodeId}`);
+        if (!resp.ok) throw new Error('Not found');
+        const detail = await resp.json();
+        const node = detail.node;
+        const neighbors = detail.neighbors || [];
+        const degree = detail.degree || {};
+
+        // Update header with color dot + label
+        const typeColor = getNodeColor(node.node_type);
+        header.innerHTML = `
+            <span style="display:flex;align-items:center;gap:0.5rem;overflow:hidden;">
+                <span style="width:10px;height:10px;border-radius:50%;background:${typeColor};display:inline-block;flex-shrink:0;"></span>
+                <span style="overflow:hidden;text-overflow:ellipsis;white-space:nowrap;">${node.label}</span>
+            </span>
+        `;
+
+        // Build body content
+        let html = '';
+
+        // ── Info section ──
+        html += `<div class="detail-section">
+            <div class="section-title">基本信息</div>
+            <div>
+                <span class="badge-tag ${node.node_type}">${node.node_type}</span>
+                ${(node.properties && node.properties.domain) ? `<span class="badge-tag">${node.properties.domain}</span>` : ''}
+                ${(node.properties && node.properties.source_book) ? `<span class="badge-tag">${node.properties.source_book}</span>` : ''}
+                ${node.source_id ? `<span class="badge-tag" title="ID: ${node.source_id}">${node.source_id.substring(0, 16)}…</span>` : ''}
+            </div>
+        </div>`;
+
+        // ── Knowledge content section ──
+        html += `<div class="detail-section">
+            <div class="section-title">知识讲解</div>
+            <button class="view-vault-btn" id="btn-load-vault" onclick="loadVaultContent('${node.label.replace(/'/g, "\\'")}', '${(node.properties && node.properties.source_book) || ''}')">
+                查看知识讲解
+            </button>
+            <div id="vault-content-area" style="margin-top:0.5rem;"></div>
+        </div>`;
+
+        // ── Neighbors section ──
+        if (neighbors.length > 0) {
+            html += `<div class="detail-section">
+                <div class="section-title">关联概念 (${neighbors.length})</div>
+                <ul class="neighbor-list">
+                    ${neighbors.map(n => `
+                        <li onclick="openNodeDetail('${n.id}')">
+                            <span class="dot" style="background:${getNodeColor(n.node_type)};"></span>
+                            <span>${n.label}</span>
+                            <span style="color:var(--text-muted);font-size:0.75rem;margin-left:auto;">${n.node_type}</span>
+                        </li>
+                    `).join('')}
+                </ul>
+            </div>`;
+        } else {
+            html += `<div class="detail-section">
+                <div class="section-title">关联概念</div>
+                <div style="color:var(--text-muted);font-size:0.85rem;">暂无关联概念</div>
+            </div>`;
+        }
+
+        // ── Stats section ──
+        html += `<div class="detail-section">
+            <div class="section-title">图谱统计</div>
+            <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:0.5rem;">
+                <div style="background:var(--bg);padding:0.5rem;border-radius:0.4rem;text-align:center;">
+                    <div style="font-size:1.1rem;font-weight:700;color:var(--primary-light);">${degree.total || 0}</div>
+                    <div style="font-size:0.7rem;color:var(--text-muted);">关联数</div>
+                </div>
+                <div style="background:var(--bg);padding:0.5rem;border-radius:0.4rem;text-align:center;">
+                    <div style="font-size:1.1rem;font-weight:700;color:var(--success);">${degree.in_degree || 0}</div>
+                    <div style="font-size:0.7rem;color:var(--text-muted);">入度</div>
+                </div>
+                <div style="background:var(--bg);padding:0.5rem;border-radius:0.4rem;text-align:center;">
+                    <div style="font-size:1.1rem;font-weight:700;color:var(--warning);">${degree.out_degree || 0}</div>
+                    <div style="font-size:0.7rem;color:var(--text-muted);">出度</div>
+                </div>
+            </div>
+        </div>`;
+
+        body.innerHTML = html;
+
+        // Auto-load vault content for concept nodes
+        if (node.node_type === 'concept') {
+            loadVaultContent(node.label, (node.properties && node.properties.source_book) || '');
+        }
+
+    } catch (e) {
+        console.error('Node detail load failed:', e);
+        header.textContent = '加载失败';
+        body.innerHTML = `<div class="empty-state"><div class="icon">❌</div><div class="message">无法加载节点详情</div></div>`;
+    }
+}
+
+async function loadVaultContent(label, source) {
+    const btn = document.getElementById('btn-load-vault');
+    const area = document.getElementById('vault-content-area');
+
+    if (!btn || !area) return;
+
+    btn.classList.add('loading');
+    btn.textContent = '加载中...';
+
+    try {
+        let url = `${API_BASE}/vault/content?label=${encodeURIComponent(label)}`;
+        if (source) url += `&source=${encodeURIComponent(source)}`;
+
+        const resp = await fetch(url);
+        const data = await resp.json();
+
+        if (data.found && data.content) {
+            // Parse: strip YAML frontmatter
+            let content = data.content;
+            content = content.replace(/^---[\s\S]*?---\n*/m, '');
+
+            // Make vault path clickable
+            const vaultPath = data.path || '';
+
+            // Escape HTML entities first
+            content = content
+                .replace(/&/g, '&amp;')
+                .replace(/</g, '&lt;')
+                .replace(/>/g, '&gt;')
+                .replace(/"/g, '&quot;');
+
+            // Then apply markdown formatting
+            content = content
+                // [[wiki links]]
+                .replace(/\[\[([^\]]+)\]\]/g, '<strong style="color:var(--primary-light);">$1</strong>')
+                // Headings
+                .replace(/^### (.+)$/gm, '<h3>$1</h3>')
+                .replace(/^## (.+)$/gm, '<h2>$1</h2>')
+                .replace(/^# (.+)$/gm, '<h1>$1</h1>')
+                // Bold/italic
+                .replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>')
+                .replace(/\*(.+?)\*/g, '<em>$1</em>')
+                // Lists
+                .replace(/^- (.+)$/gm, '<li>$1</li>')
+                // Horizontal rules
+                .replace(/^---$/gm, '<hr>')
+                // Multiple newlines to paragraph breaks
+                .replace(/\n\n+/g, '</p><p>')
+                // Single newlines to line breaks (but not inside blocks)
+                .replace(/\n/g, '<br>');
+
+            // Wrap in paragraph if not already wrapped
+            content = '<p>' + content + '</p>';
+
+            // Fix nested list tags inside paragraphs
+            content = content.replace(/<p><li>/g, '<li>').replace(/<\/li><\/p>/g, '</li>');
+            // Group consecutive <li> into <ul>
+            content = content.replace(/((?:<li>.*?<\/li><br>?)+)/g, '<ul>$1</ul>');
+            // Cleanup: remove <br> at end of <li>
+            content = content.replace(/<li>(.*?)<br><\/li>/g, '<li>$1</li>');
+
+            let pathHtml = vaultPath ? `<div style="font-size:0.7rem;color:var(--text-muted);margin-bottom:0.5rem;">${vaultPath}</div>` : '';
+            area.innerHTML = `<div class="vault-content">${pathHtml}${content}</div>`;
+            btn.textContent = '已加载知识讲解 ✓';
+        } else {
+            area.innerHTML = `<div style="color:var(--text-muted);font-size:0.8rem;padding:0.5rem;">未找到对应知识文档（尝试搜索 vault 目录）</div>`;
+            btn.textContent = '查看知识讲解';
+        }
+    } catch (e) {
+        console.error('Vault content load failed:', e);
+        area.innerHTML = `<div style="color:var(--danger);font-size:0.8rem;padding:0.5rem;">加载失败: ${e.message}</div>`;
+        btn.textContent = '查看知识讲解';
+    } finally {
+        btn.classList.remove('loading');
+    }
+}
+
+function escapeHtml(text) {
+    const div = document.createElement('div');
+    div.textContent = text;
+    return div.innerHTML;
+}
+
+function closeDetailPanel() {
+    document.getElementById('detail-panel').classList.remove('open');
+    selectedNodeId = null;
 }
 
 // ─── Conflicts ───────────────────────────────────────────────
