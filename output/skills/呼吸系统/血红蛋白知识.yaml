@@ -1,0 +1,24 @@
+skill:
+  id: skill_b7c754e9
+  name: 血红蛋白知识
+  version: 1.0.0
+  source:
+    book: 呼吸系统
+    chapter: 呼吸的基本过程
+    document_id: e446c79c-5d43-43f6-a9f8-92f01304967a
+  description: 红细胞中负责运输氧气的蛋白质，其与氧气结合程度用血氧饱和度表示。
+  knowledge:
+    facts:
+    - 血红蛋白是氧气的载体
+    - 血氧饱和度（SpO₂）反映血红蛋白与氧气结合程度
+    - 正常SpO₂为95%-100%
+    - 血红蛋白含量低可导致低氧血症
+    procedures: []
+    caveats:
+    - 血红蛋白变异（如镰状细胞病）会影响携氧能力
+    - SpO₂不能反映血红蛋白总量
+  tags:
+  - 血液
+  - 氧气运输
+  - 呼吸
+  related_skills: []

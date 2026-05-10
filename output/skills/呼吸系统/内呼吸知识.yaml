@@ -1,0 +1,20 @@
+skill:
+  id: skill_23599697
+  name: 内呼吸知识
+  version: 1.0.0
+  source:
+    book: 呼吸系统
+    chapter: 呼吸的基本过程
+    document_id: e446c79c-5d43-43f6-a9f8-92f01304967a
+  description: 血液与组织细胞之间的气体交换，是呼吸过程的第二步。
+  knowledge:
+    facts:
+    - 内呼吸发生在组织细胞中。
+    - 内呼吸是呼吸过程中气体交换的第二阶段。
+    - 内呼吸实现了血液与组织细胞之间的氧气和二氧化碳交换。
+    procedures: []
+    caveats: []
+  tags:
+  - 呼吸系统
+  - 生理学
+  related_skills: []

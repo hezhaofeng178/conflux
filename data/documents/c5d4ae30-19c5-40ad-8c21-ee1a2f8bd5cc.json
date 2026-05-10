@@ -1,0 +1,179 @@
+{
+  "id": "c5d4ae30-19c5-40ad-8c21-ee1a2f8bd5cc",
+  "meta": {
+    "title": "运动生理学",
+    "author": null,
+    "source_format": "markdown",
+    "language": "zh-CN",
+    "import_time": "2026-05-10T11:20:57.326831",
+    "file_hash": "a71dd30068d4a41a",
+    "file_path": "/Users/iveshe/CodeBuddy/20260507101955/conflux/sources/运动生理学.md",
+    "isbn": null,
+    "publisher": null,
+    "publish_year": null,
+    "tags": [],
+    "description": null
+  },
+  "structure": [
+    {
+      "id": "ch_868015c6",
+      "title": "运动生理学",
+      "level": 1,
+      "sections": [],
+      "children": [
+        {
+          "id": "ch_bcf8a41f",
+          "title": "运动时的心血管反应",
+          "level": 2,
+          "sections": [
+            {
+              "id": "sec_9cbbbbd4",
+              "title": null,
+              "level": 3,
+              "content": "运动时，身体对氧气的需求大幅增加，心血管系统会做出以下调整：\n\n- **心率加快**：从安静时的 60-100 次/分提升到最高约 220 - 年龄（次/分）\n- **心输出量增加**：最大可达安静时的 4-6 倍，优秀运动员可达 30-40 升/分\n- **血压升高**：收缩压可升至 200 mmHg 以上，舒张压变化不大",
+              "paragraphs": [
+                {
+                  "id": "p_b0f37153",
+                  "content": "运动时，身体对氧气的需求大幅增加，心血管系统会做出以下调整：",
+                  "paragraph_type": "text",
+                  "metadata": {}
+                },
+                {
+                  "id": "p_9daabc7c",
+                  "content": "- **心率加快**：从安静时的 60-100 次/分提升到最高约 220 - 年龄（次/分）\n- **心输出量增加**：最大可达安静时的 4-6 倍，优秀运动员可达 30-40 升/分\n- **血压升高**：收缩压可升至 200 mmHg 以上，舒张压变化不大",
+                  "paragraph_type": "text",
+                  "metadata": {}
+                }
+              ],
+              "concepts": [],
+              "claims": [],
+              "word_count": 163,
+              "is_empty": false
+            }
+          ],
+          "children": [],
+          "full_content": "运动时，身体对氧气的需求大幅增加，心血管系统会做出以下调整：\n\n- **心率加快**：从安静时的 60-100 次/分提升到最高约 220 - 年龄（次/分）\n- **心输出量增加**：最大可达安静时的 4-6 倍，优秀运动员可达 30-40 升/分\n- **血压升高**：收缩压可升至 200 mmHg 以上，舒张压变化不大",
+          "total_sections": 1
+        },
+        {
+          "id": "ch_dd6a511d",
+          "title": "最大摄氧量",
+          "level": 2,
+          "sections": [
+            {
+              "id": "sec_b66ec9ed",
+              "title": null,
+              "level": 3,
+              "content": "**最大摄氧量**（VO₂max）是衡量心肺耐力的金标准指标。它反映了在极限运动时，心血管系统向组织输送氧气的最大能力。\n\nVO₂max 取决于：\n1. **心输出量**（心率 × 每搏输出量）—— 这是最主要的限制因素\n2. 肺部气体交换效率\n3. 肌肉利用氧气的能力\n\n普通成人 VO₂max 约 35-45 ml/kg/min，精英耐力运动员可达 70-85 ml/kg/min。",
+              "paragraphs": [
+                {
+                  "id": "p_896807fd",
+                  "content": "**最大摄氧量**（VO₂max）是衡量心肺耐力的金标准指标。它反映了在极限运动时，心血管系统向组织输送氧气的最大能力。",
+                  "paragraph_type": "text",
+                  "metadata": {}
+                },
+                {
+                  "id": "p_2ee49490",
+                  "content": "VO₂max 取决于：\n1. **心输出量**（心率 × 每搏输出量）—— 这是最主要的限制因素\n2. 肺部气体交换效率\n3. 肌肉利用氧气的能力",
+                  "paragraph_type": "text",
+                  "metadata": {}
+                },
+                {
+                  "id": "p_0714e8e8",
+                  "content": "普通成人 VO₂max 约 35-45 ml/kg/min，精英耐力运动员可达 70-85 ml/kg/min。",
+                  "paragraph_type": "text",
+                  "metadata": {}
+                }
+              ],
+              "concepts": [],
+              "claims": [],
+              "word_count": 193,
+              "is_empty": false
+            }
+          ],
+          "children": [],
+          "full_content": "**最大摄氧量**（VO₂max）是衡量心肺耐力的金标准指标。它反映了在极限运动时，心血管系统向组织输送氧气的最大能力。\n\nVO₂max 取决于：\n1. **心输出量**（心率 × 每搏输出量）—— 这是最主要的限制因素\n2. 肺部气体交换效率\n3. 肌肉利用氧气的能力\n\n普通成人 VO₂max 约 35-45 ml/kg/min，精英耐力运动员可达 70-85 ml/kg/min。",
+          "total_sections": 1
+        },
+        {
+          "id": "ch_81899985",
+          "title": "运动与血压",
+          "level": 2,
+          "sections": [
+            {
+              "id": "sec_6f13a513",
+              "title": null,
+              "level": 3,
+              "content": "适度有氧运动对**高血压**有显著的降压效果：\n\n- 每周 150 分钟中等强度运动可降低收缩压 5-8 mmHg\n- 运动后存在\"运动后低血压\"现象，可持续数小时\n- 长期运动训练可改善血管弹性，降低外周阻力\n\n注意：**收缩压 > 180 mmHg 或舒张压 > 110 mmHg** 时应避免剧烈运动。",
+              "paragraphs": [
+                {
+                  "id": "p_d882a55c",
+                  "content": "适度有氧运动对**高血压**有显著的降压效果：",
+                  "paragraph_type": "text",
+                  "metadata": {}
+                },
+                {
+                  "id": "p_8bde1d93",
+                  "content": "- 每周 150 分钟中等强度运动可降低收缩压 5-8 mmHg\n- 运动后存在\"运动后低血压\"现象，可持续数小时\n- 长期运动训练可改善血管弹性，降低外周阻力",
+                  "paragraph_type": "text",
+                  "metadata": {}
+                },
+                {
+                  "id": "p_2d0e29ed",
+                  "content": "注意：**收缩压 > 180 mmHg 或舒张压 > 110 mmHg** 时应避免剧烈运动。",
+                  "paragraph_type": "text",
+                  "metadata": {}
+                }
+              ],
+              "concepts": [],
+              "claims": [],
+              "word_count": 154,
+              "is_empty": false
+            }
+          ],
+          "children": [],
+          "full_content": "适度有氧运动对**高血压**有显著的降压效果：\n\n- 每周 150 分钟中等强度运动可降低收缩压 5-8 mmHg\n- 运动后存在\"运动后低血压\"现象，可持续数小时\n- 长期运动训练可改善血管弹性，降低外周阻力\n\n注意：**收缩压 > 180 mmHg 或舒张压 > 110 mmHg** 时应避免剧烈运动。",
+          "total_sections": 1
+        },
+        {
+          "id": "ch_b7fd63a6",
+          "title": "运动与心力衰竭",
+          "level": 2,
+          "sections": [
+            {
+              "id": "sec_830ad403",
+              "title": null,
+              "level": 3,
+              "content": "过去认为心力衰竭患者应卧床休息，但现代研究表明：\n\n- 适当的有氧运动（如步行、骑车）可以**改善**心衰患者的心功能\n- 运动训练可提高心衰患者的 VO₂max 10-30%\n- 但需在医疗监护下进行，运动强度应循序渐进",
+              "paragraphs": [
+                {
+                  "id": "p_87103312",
+                  "content": "过去认为心力衰竭患者应卧床休息，但现代研究表明：",
+                  "paragraph_type": "text",
+                  "metadata": {}
+                },
+                {
+                  "id": "p_7d74ea24",
+                  "content": "- 适当的有氧运动（如步行、骑车）可以**改善**心衰患者的心功能\n- 运动训练可提高心衰患者的 VO₂max 10-30%\n- 但需在医疗监护下进行，运动强度应循序渐进",
+                  "paragraph_type": "text",
+                  "metadata": {}
+                }
+              ],
+              "concepts": [],
+              "claims": [],
+              "word_count": 111,
+              "is_empty": false
+            }
+          ],
+          "children": [],
+          "full_content": "过去认为心力衰竭患者应卧床休息，但现代研究表明：\n\n- 适当的有氧运动（如步行、骑车）可以**改善**心衰患者的心功能\n- 运动训练可提高心衰患者的 VO₂max 10-30%\n- 但需在医疗监护下进行，运动强度应循序渐进",
+          "total_sections": 1
+        }
+      ],
+      "full_content": "运动时，身体对氧气的需求大幅增加，心血管系统会做出以下调整：\n\n- **心率加快**：从安静时的 60-100 次/分提升到最高约 220 - 年龄（次/分）\n- **心输出量增加**：最大可达安静时的 4-6 倍，优秀运动员可达 30-40 升/分\n- **血压升高**：收缩压可升至 200 mmHg 以上，舒张压变化不大\n\n**最大摄氧量**（VO₂max）是衡量心肺耐力的金标准指标。它反映了在极限运动时，心血管系统向组织输送氧气的最大能力。\n\nVO₂max 取决于：\n1. **心输出量**（心率 × 每搏输出量）—— 这是最主要的限制因素\n2. 肺部气体交换效率\n3. 肌肉利用氧气的能力\n\n普通成人 VO₂max 约 35-45 ml/kg/min，精英耐力运动员可达 70-85 ml/kg/min。\n\n适度有氧运动对**高血压**有显著的降压效果：\n\n- 每周 150 分钟中等强度运动可降低收缩压 5-8 mmHg\n- 运动后存在\"运动后低血压\"现象，可持续数小时\n- 长期运动训练可改善血管弹性，降低外周阻力\n\n注意：**收缩压 > 180 mmHg 或舒张压 > 110 mmHg** 时应避免剧烈运动。\n\n过去认为心力衰竭患者应卧床休息，但现代研究表明：\n\n- 适当的有氧运动（如步行、骑车）可以**改善**心衰患者的心功能\n- 运动训练可提高心衰患者的 VO₂max 10-30%\n- 但需在医疗监护下进行，运动强度应循序渐进",
+      "total_sections": 4
+    }
+  ],
+  "total_chapters": 1,
+  "total_words": 621
+}

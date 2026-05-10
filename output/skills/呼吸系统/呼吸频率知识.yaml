@@ -1,0 +1,25 @@
+skill:
+  id: skill_00c18874
+  name: 呼吸频率知识
+  version: 1.0.0
+  source:
+    book: 呼吸系统
+    chapter: 呼吸的基本过程
+    document_id: e446c79c-5d43-43f6-a9f8-92f01304967a
+  description: 每分钟呼吸次数，正常成人12-20次/分，用于评估肺功能和通气状态
+  knowledge:
+    facts:
+    - 呼吸频率正常范围12-20次/分
+    - 每分通气量 = 潮气量 × 呼吸频率
+    - 潮气量平静呼吸时约500毫升
+    - 肺活量成人约3-5升
+    procedures: []
+    caveats:
+    - 呼吸频率受年龄、运动、情绪影响
+    - 儿童较快，老人较慢
+    - 仅凭频率不足以诊断，需结合其他指标
+  tags:
+  - 呼吸系统
+  - 生命体征
+  - 肺功能
+  related_skills: []

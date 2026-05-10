@@ -1,0 +1,185 @@
+{
+  "id": "0ff42484-71f5-4ac3-a56b-d4c08456d736",
+  "meta": {
+    "title": "心血管系统",
+    "author": null,
+    "source_format": "markdown",
+    "language": "zh-CN",
+    "import_time": "2026-05-10T11:20:57.329253",
+    "file_hash": "1e7aa81e33286d44",
+    "file_path": "/Users/iveshe/CodeBuddy/20260507101955/conflux/sources/心血管系统.md",
+    "isbn": null,
+    "publisher": null,
+    "publish_year": null,
+    "tags": [],
+    "description": null
+  },
+  "structure": [
+    {
+      "id": "ch_21cb58f0",
+      "title": "心血管系统",
+      "level": 1,
+      "sections": [],
+      "children": [
+        {
+          "id": "ch_5660b9c1",
+          "title": "心脏的基本功能",
+          "level": 2,
+          "sections": [
+            {
+              "id": "sec_05f1623a",
+              "title": null,
+              "level": 3,
+              "content": "心脏是人体最重要的器官之一，它通过不断地收缩和舒张，将血液泵送到全身各个组织和器官。成年人的心脏每分钟跳动约 60-100 次，这被称为**心率**（Heart Rate）。\n\n心脏分为四个腔室：左心房、左心室、右心房、右心室。左心室负责将富含氧气的血液泵入主动脉，供应全身；右心室则将缺氧血液泵入肺动脉，送往肺部进行气体交换。",
+              "paragraphs": [
+                {
+                  "id": "p_526da6d9",
+                  "content": "心脏是人体最重要的器官之一，它通过不断地收缩和舒张，将血液泵送到全身各个组织和器官。成年人的心脏每分钟跳动约 60-100 次，这被称为**心率**（Heart Rate）。",
+                  "paragraph_type": "text",
+                  "metadata": {}
+                },
+                {
+                  "id": "p_5ad8614e",
+                  "content": "心脏分为四个腔室：左心房、左心室、右心房、右心室。左心室负责将富含氧气的血液泵入主动脉，供应全身；右心室则将缺氧血液泵入肺动脉，送往肺部进行气体交换。",
+                  "paragraph_type": "text",
+                  "metadata": {}
+                }
+              ],
+              "concepts": [],
+              "claims": [],
+              "word_count": 164,
+              "is_empty": false
+            }
+          ],
+          "children": [],
+          "full_content": "心脏是人体最重要的器官之一，它通过不断地收缩和舒张，将血液泵送到全身各个组织和器官。成年人的心脏每分钟跳动约 60-100 次，这被称为**心率**（Heart Rate）。\n\n心脏分为四个腔室：左心房、左心室、右心房、右心室。左心室负责将富含氧气的血液泵入主动脉，供应全身；右心室则将缺氧血液泵入肺动脉，送往肺部进行气体交换。",
+          "total_sections": 1
+        },
+        {
+          "id": "ch_37dc21ad",
+          "title": "心输出量",
+          "level": 2,
+          "sections": [
+            {
+              "id": "sec_e636884d",
+              "title": null,
+              "level": 3,
+              "content": "**心输出量**（Cardiac Output, CO）是指心脏每分钟泵出的血液总量，正常值约为 4-8 升/分钟。计算公式为：\n\n    心输出量 = 心率 × 每搏输出量\n\n其中**每搏输出量**（Stroke Volume）是指心脏每次收缩时泵出的血液量，正常约 60-130 毫升。",
+              "paragraphs": [
+                {
+                  "id": "p_f3815679",
+                  "content": "**心输出量**（Cardiac Output, CO）是指心脏每分钟泵出的血液总量，正常值约为 4-8 升/分钟。计算公式为：",
+                  "paragraph_type": "text",
+                  "metadata": {}
+                },
+                {
+                  "id": "p_6ce44225",
+                  "content": "心输出量 = 心率 × 每搏输出量",
+                  "paragraph_type": "text",
+                  "metadata": {}
+                },
+                {
+                  "id": "p_ab2cbf42",
+                  "content": "其中**每搏输出量**（Stroke Volume）是指心脏每次收缩时泵出的血液量，正常约 60-130 毫升。",
+                  "paragraph_type": "text",
+                  "metadata": {}
+                }
+              ],
+              "concepts": [],
+              "claims": [],
+              "word_count": 145,
+              "is_empty": false
+            }
+          ],
+          "children": [],
+          "full_content": "**心输出量**（Cardiac Output, CO）是指心脏每分钟泵出的血液总量，正常值约为 4-8 升/分钟。计算公式为：\n\n    心输出量 = 心率 × 每搏输出量\n\n其中**每搏输出量**（Stroke Volume）是指心脏每次收缩时泵出的血液量，正常约 60-130 毫升。",
+          "total_sections": 1
+        },
+        {
+          "id": "ch_bd95bab0",
+          "title": "血压",
+          "level": 2,
+          "sections": [
+            {
+              "id": "sec_588d9f17",
+              "title": null,
+              "level": 3,
+              "content": "**血压**是血液对血管壁施加的压力。分为：\n\n- **收缩压**（Systolic Pressure）：心脏收缩时的最高压力，正常值 < 120 mmHg\n- **舒张压**（Diastolic Pressure）：心脏舒张时的最低压力，正常值 < 80 mmHg\n\n当收缩压 ≥ 140 mmHg 或舒张压 ≥ 90 mmHg 时，即诊断为**高血压**（Hypertension）。",
+              "paragraphs": [
+                {
+                  "id": "p_8052e7e3",
+                  "content": "**血压**是血液对血管壁施加的压力。分为：",
+                  "paragraph_type": "text",
+                  "metadata": {}
+                },
+                {
+                  "id": "p_72c94aed",
+                  "content": "- **收缩压**（Systolic Pressure）：心脏收缩时的最高压力，正常值 < 120 mmHg\n- **舒张压**（Diastolic Pressure）：心脏舒张时的最低压力，正常值 < 80 mmHg",
+                  "paragraph_type": "text",
+                  "metadata": {}
+                },
+                {
+                  "id": "p_1c710f62",
+                  "content": "当收缩压 ≥ 140 mmHg 或舒张压 ≥ 90 mmHg 时，即诊断为**高血压**（Hypertension）。",
+                  "paragraph_type": "text",
+                  "metadata": {}
+                }
+              ],
+              "concepts": [],
+              "claims": [],
+              "word_count": 194,
+              "is_empty": false
+            }
+          ],
+          "children": [],
+          "full_content": "**血压**是血液对血管壁施加的压力。分为：\n\n- **收缩压**（Systolic Pressure）：心脏收缩时的最高压力，正常值 < 120 mmHg\n- **舒张压**（Diastolic Pressure）：心脏舒张时的最低压力，正常值 < 80 mmHg\n\n当收缩压 ≥ 140 mmHg 或舒张压 ≥ 90 mmHg 时，即诊断为**高血压**（Hypertension）。",
+          "total_sections": 1
+        },
+        {
+          "id": "ch_51cf7680",
+          "title": "心力衰竭",
+          "level": 2,
+          "sections": [
+            {
+              "id": "sec_39ebc191",
+              "title": null,
+              "level": 3,
+              "content": "**心力衰竭**（Heart Failure）是指心脏无法泵出足够的血液来满足身体需求的状态。常见原因包括：\n\n1. 冠心病导致心肌缺血\n2. 长期高血压使心脏负荷过重\n3. 心肌病变\n4. 心脏瓣膜疾病\n\n心力衰竭的典型症状包括呼吸困难、水肿和疲劳。",
+              "paragraphs": [
+                {
+                  "id": "p_f35b13a8",
+                  "content": "**心力衰竭**（Heart Failure）是指心脏无法泵出足够的血液来满足身体需求的状态。常见原因包括：",
+                  "paragraph_type": "text",
+                  "metadata": {}
+                },
+                {
+                  "id": "p_88ba8300",
+                  "content": "1. 冠心病导致心肌缺血\n2. 长期高血压使心脏负荷过重\n3. 心肌病变\n4. 心脏瓣膜疾病",
+                  "paragraph_type": "list",
+                  "metadata": {}
+                },
+                {
+                  "id": "p_316d2f7c",
+                  "content": "心力衰竭的典型症状包括呼吸困难、水肿和疲劳。",
+                  "paragraph_type": "text",
+                  "metadata": {}
+                }
+              ],
+              "concepts": [],
+              "claims": [],
+              "word_count": 126,
+              "is_empty": false
+            }
+          ],
+          "children": [],
+          "full_content": "**心力衰竭**（Heart Failure）是指心脏无法泵出足够的血液来满足身体需求的状态。常见原因包括：\n\n1. 冠心病导致心肌缺血\n2. 长期高血压使心脏负荷过重\n3. 心肌病变\n4. 心脏瓣膜疾病\n\n心力衰竭的典型症状包括呼吸困难、水肿和疲劳。",
+          "total_sections": 1
+        }
+      ],
+      "full_content": "心脏是人体最重要的器官之一，它通过不断地收缩和舒张，将血液泵送到全身各个组织和器官。成年人的心脏每分钟跳动约 60-100 次，这被称为**心率**（Heart Rate）。\n\n心脏分为四个腔室：左心房、左心室、右心房、右心室。左心室负责将富含氧气的血液泵入主动脉，供应全身；右心室则将缺氧血液泵入肺动脉，送往肺部进行气体交换。\n\n**心输出量**（Cardiac Output, CO）是指心脏每分钟泵出的血液总量，正常值约为 4-8 升/分钟。计算公式为：\n\n    心输出量 = 心率 × 每搏输出量\n\n其中**每搏输出量**（Stroke Volume）是指心脏每次收缩时泵出的血液量，正常约 60-130 毫升。\n\n**血压**是血液对血管壁施加的压力。分为：\n\n- **收缩压**（Systolic Pressure）：心脏收缩时的最高压力，正常值 < 120 mmHg\n- **舒张压**（Diastolic Pressure）：心脏舒张时的最低压力，正常值 < 80 mmHg\n\n当收缩压 ≥ 140 mmHg 或舒张压 ≥ 90 mmHg 时，即诊断为**高血压**（Hypertension）。\n\n**心力衰竭**（Heart Failure）是指心脏无法泵出足够的血液来满足身体需求的状态。常见原因包括：\n\n1. 冠心病导致心肌缺血\n2. 长期高血压使心脏负荷过重\n3. 心肌病变\n4. 心脏瓣膜疾病\n\n心力衰竭的典型症状包括呼吸困难、水肿和疲劳。",
+      "total_sections": 4
+    }
+  ],
+  "total_chapters": 1,
+  "total_words": 629
+}

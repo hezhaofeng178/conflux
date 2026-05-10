@@ -1,0 +1,23 @@
+skill:
+  id: skill_4f525c66
+  name: 低氧血症知识
+  version: 1.0.0
+  source:
+    book: 呼吸系统
+    chapter: 呼吸的基本过程
+    document_id: e446c79c-5d43-43f6-a9f8-92f01304967a
+  description: 血液中氧气含量过低的状态，通过血氧饱和度（SpO₂）评估，低于90%提示低氧血症需紧急处理。
+  knowledge:
+    facts:
+    - 血氧饱和度（SpO₂）正常值为95%-100%
+    - 低于90%提示低氧血症
+    - 低氧血症可能由肺功能、心功能、血红蛋白含量、环境氧浓度等因素影响
+    procedures: []
+    caveats:
+    - SpO₂不能完全替代动脉血氧分压
+    - 某些情况（如一氧化碳中毒）SpO₂可能假性正常
+  tags:
+  - 血氧
+  - 呼吸系统
+  - 紧急
+  related_skills: []

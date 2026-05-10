@@ -1,0 +1,791 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conflux - 知识融合引擎</title>
+    <style>
+        :root {
+            --primary: #6366f1;
+            --primary-light: #818cf8;
+            --bg: #0f172a;
+            --surface: #1e293b;
+            --surface-alt: #334155;
+            --text: #f1f5f9;
+            --text-muted: #94a3b8;
+            --border: #475569;
+            --success: #10b981;
+            --warning: #f59e0b;
+            --danger: #ef4444;
+            --info: #3b82f6;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'PingFang SC', sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            min-height: 100vh;
+        }
+
+        /* Layout */
+        .app {
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+        }
+
+        header {
+            background: var(--surface);
+            border-bottom: 1px solid var(--border);
+            padding: 0.75rem 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            font-size: 1.25rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--primary), var(--primary-light));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        nav {
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        nav button {
+            padding: 0.5rem 1rem;
+            border: none;
+            border-radius: 0.5rem;
+            background: transparent;
+            color: var(--text-muted);
+            cursor: pointer;
+            font-size: 0.875rem;
+            transition: all 0.2s;
+        }
+
+        nav button:hover { color: var(--text); background: var(--surface-alt); }
+        nav button.active { color: var(--primary-light); background: var(--surface-alt); }
+
+        main {
+            flex: 1;
+            overflow: hidden;
+            display: flex;
+        }
+
+        .panel { display: none; width: 100%; height: 100%; overflow: auto; padding: 1.5rem; }
+        .panel.active { display: block; }
+
+        /* Stats Cards */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .stat-card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 0.75rem;
+            padding: 1.25rem;
+        }
+
+        .stat-card .label { color: var(--text-muted); font-size: 0.75rem; text-transform: uppercase; }
+        .stat-card .value { font-size: 2rem; font-weight: 700; margin-top: 0.25rem; }
+        .stat-card .value.primary { color: var(--primary-light); }
+        .stat-card .value.success { color: var(--success); }
+        .stat-card .value.warning { color: var(--warning); }
+
+        /* Graph Canvas */
+        #graph-container {
+            width: 100%;
+            height: 100%;
+            position: relative;
+        }
+
+        #graph-canvas {
+            width: 100%;
+            height: 100%;
+        }
+
+        .graph-controls {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .graph-controls button {
+            width: 36px;
+            height: 36px;
+            border: 1px solid var(--border);
+            border-radius: 0.5rem;
+            background: var(--surface);
+            color: var(--text);
+            cursor: pointer;
+            font-size: 1.2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .graph-controls button:hover { background: var(--surface-alt); }
+
+        /* Conflict List */
+        .conflict-list { list-style: none; }
+
+        .conflict-item {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 0.75rem;
+            padding: 1rem 1.25rem;
+            margin-bottom: 0.75rem;
+            cursor: pointer;
+            transition: border-color 0.2s;
+        }
+
+        .conflict-item:hover { border-color: var(--primary); }
+
+        .conflict-item .header {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .conflict-item .title { font-weight: 600; flex: 1; }
+
+        .badge {
+            padding: 0.2rem 0.5rem;
+            border-radius: 0.25rem;
+            font-size: 0.7rem;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+
+        .badge.critical { background: var(--danger); color: white; }
+        .badge.high { background: var(--warning); color: black; }
+        .badge.medium { background: var(--info); color: white; }
+        .badge.low { background: var(--surface-alt); color: var(--text-muted); }
+        .badge.resolved { background: var(--success); color: white; }
+        .badge.unresolved { background: var(--surface-alt); color: var(--text-muted); }
+
+        .conflict-item .meta {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+        }
+
+        /* Conflict Detail Modal */
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: rgba(0,0,0,0.7);
+            z-index: 1000;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal-overlay.active { display: flex; }
+
+        .modal {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 1rem;
+            width: 90%;
+            max-width: 700px;
+            max-height: 80vh;
+            overflow-y: auto;
+            padding: 2rem;
+        }
+
+        .modal h2 { margin-bottom: 1rem; }
+
+        .sides-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin: 1.5rem 0;
+        }
+
+        .side-card {
+            background: var(--bg);
+            border: 1px solid var(--border);
+            border-radius: 0.75rem;
+            padding: 1rem;
+        }
+
+        .side-card .book { color: var(--primary-light); font-size: 0.8rem; margin-bottom: 0.5rem; }
+        .side-card .position { font-size: 0.9rem; line-height: 1.5; }
+
+        .verdict-form {
+            margin-top: 1.5rem;
+            padding-top: 1rem;
+            border-top: 1px solid var(--border);
+        }
+
+        .verdict-form select, .verdict-form textarea {
+            width: 100%;
+            padding: 0.5rem;
+            border: 1px solid var(--border);
+            border-radius: 0.5rem;
+            background: var(--bg);
+            color: var(--text);
+            margin-top: 0.5rem;
+            font-size: 0.9rem;
+        }
+
+        .verdict-form textarea { resize: vertical; min-height: 60px; }
+
+        .btn {
+            padding: 0.5rem 1.25rem;
+            border: none;
+            border-radius: 0.5rem;
+            cursor: pointer;
+            font-size: 0.875rem;
+            font-weight: 600;
+            transition: opacity 0.2s;
+        }
+
+        .btn:hover { opacity: 0.85; }
+        .btn-primary { background: var(--primary); color: white; }
+        .btn-secondary { background: var(--surface-alt); color: var(--text); }
+        .btn-danger { background: var(--danger); color: white; }
+
+        .btn-group { display: flex; gap: 0.5rem; margin-top: 1rem; }
+
+        /* Documents */
+        .doc-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .doc-table th, .doc-table td {
+            padding: 0.75rem 1rem;
+            text-align: left;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .doc-table th {
+            color: var(--text-muted);
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            font-weight: 600;
+        }
+
+        /* Empty State */
+        .empty-state {
+            text-align: center;
+            color: var(--text-muted);
+            padding: 4rem 2rem;
+        }
+
+        .empty-state .icon { font-size: 3rem; margin-bottom: 1rem; }
+        .empty-state .message { font-size: 1.1rem; }
+
+        /* Loading */
+        .loading {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 3rem;
+            color: var(--text-muted);
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        .spinner {
+            width: 24px;
+            height: 24px;
+            border: 3px solid var(--border);
+            border-top-color: var(--primary);
+            border-radius: 50%;
+            animation: spin 0.8s linear infinite;
+            margin-right: 0.75rem;
+        }
+
+        /* Node tooltip */
+        .tooltip {
+            position: absolute;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 0.5rem;
+            padding: 0.75rem;
+            font-size: 0.8rem;
+            pointer-events: none;
+            z-index: 100;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+<div class="app">
+    <header>
+        <div class="logo">⚡ Conflux</div>
+        <nav>
+            <button class="active" data-panel="dashboard">📊 概览</button>
+            <button data-panel="graph">🌐 图谱</button>
+            <button data-panel="conflicts">⚔️ 冲突</button>
+            <button data-panel="documents">📚 文档</button>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Dashboard Panel -->
+        <div class="panel active" id="panel-dashboard">
+            <h2 style="margin-bottom: 1.5rem;">系统概览</h2>
+            <div class="stats-grid" id="stats-grid">
+                <div class="loading"><div class="spinner"></div>加载中...</div>
+            </div>
+        </div>
+
+        <!-- Graph Panel -->
+        <div class="panel" id="panel-graph">
+            <div id="graph-container">
+                <svg id="graph-canvas"></svg>
+                <div class="graph-controls">
+                    <button id="btn-zoom-in" title="放大">+</button>
+                    <button id="btn-zoom-out" title="缩小">−</button>
+                    <button id="btn-zoom-fit" title="适应">⊞</button>
+                </div>
+                <div class="tooltip" id="node-tooltip"></div>
+            </div>
+        </div>
+
+        <!-- Conflicts Panel -->
+        <div class="panel" id="panel-conflicts">
+            <h2 style="margin-bottom: 1.5rem;">知识冲突</h2>
+            <div id="conflict-filters" style="margin-bottom: 1rem;">
+                <select id="filter-status" style="padding:0.4rem;border-radius:0.4rem;background:var(--surface);color:var(--text);border:1px solid var(--border);">
+                    <option value="">全部状态</option>
+                    <option value="unresolved">未裁决</option>
+                    <option value="resolved">已裁决</option>
+                    <option value="deferred">暂缓</option>
+                </select>
+                <select id="filter-severity" style="padding:0.4rem;border-radius:0.4rem;background:var(--surface);color:var(--text);border:1px solid var(--border);margin-left:0.5rem;">
+                    <option value="">全部程度</option>
+                    <option value="critical">严重</option>
+                    <option value="high">高</option>
+                    <option value="medium">中</option>
+                    <option value="low">低</option>
+                </select>
+            </div>
+            <ul class="conflict-list" id="conflict-list">
+                <div class="loading"><div class="spinner"></div>加载中...</div>
+            </ul>
+        </div>
+
+        <!-- Documents Panel -->
+        <div class="panel" id="panel-documents">
+            <h2 style="margin-bottom: 1.5rem;">已导入文档</h2>
+            <div id="documents-container">
+                <div class="loading"><div class="spinner"></div>加载中...</div>
+            </div>
+        </div>
+    </main>
+</div>
+
+<!-- Conflict Detail Modal -->
+<div class="modal-overlay" id="conflict-modal">
+    <div class="modal" id="conflict-modal-content"></div>
+</div>
+
+<script>
+// ─── State ───────────────────────────────────────────────────
+const API_BASE = '/api';
+let currentPanel = 'dashboard';
+
+// ─── Navigation ──────────────────────────────────────────────
+document.querySelectorAll('nav button').forEach(btn => {
+    btn.addEventListener('click', () => {
+        const panel = btn.dataset.panel;
+        switchPanel(panel);
+    });
+});
+
+function switchPanel(panel) {
+    currentPanel = panel;
+    document.querySelectorAll('nav button').forEach(b => b.classList.remove('active'));
+    document.querySelectorAll('.panel').forEach(p => p.classList.remove('active'));
+    document.querySelector(`nav button[data-panel="${panel}"]`).classList.add('active');
+    document.getElementById(`panel-${panel}`).classList.add('active');
+
+    // Load data on switch
+    if (panel === 'dashboard') loadStats();
+    else if (panel === 'graph') loadGraph();
+    else if (panel === 'conflicts') loadConflicts();
+    else if (panel === 'documents') loadDocuments();
+}
+
+// ─── Dashboard ───────────────────────────────────────────────
+async function loadStats() {
+    try {
+        const resp = await fetch(`${API_BASE}/stats`);
+        const data = await resp.json();
+        document.getElementById('stats-grid').innerHTML = `
+            <div class="stat-card"><div class="label">文档</div><div class="value primary">${data.documents}</div></div>
+            <div class="stat-card"><div class="label">概念</div><div class="value primary">${data.concepts}</div></div>
+            <div class="stat-card"><div class="label">图谱节点</div><div class="value success">${data.graph_nodes}</div></div>
+            <div class="stat-card"><div class="label">图谱边</div><div class="value success">${data.graph_edges}</div></div>
+            <div class="stat-card"><div class="label">冲突</div><div class="value warning">${data.conflicts}</div></div>
+            <div class="stat-card"><div class="label">子网</div><div class="value">${data.subnets}</div></div>
+        `;
+    } catch (e) {
+        document.getElementById('stats-grid').innerHTML = `
+            <div class="empty-state"><div class="icon">📊</div><div class="message">暂无数据，请先导入文档</div></div>
+        `;
+    }
+}
+
+// ─── Graph (D3 Force) ────────────────────────────────────────
+let simulation = null;
+
+async function loadGraph() {
+    try {
+        const resp = await fetch(`${API_BASE}/graph?limit=150`);
+        const data = await resp.json();
+
+        if (!data.nodes.length) {
+            document.getElementById('graph-canvas').innerHTML = '';
+            return;
+        }
+
+        renderGraph(data);
+    } catch (e) {
+        console.error('Graph load failed:', e);
+    }
+}
+
+function renderGraph(data) {
+    const svg = document.getElementById('graph-canvas');
+    const rect = svg.parentElement.getBoundingClientRect();
+    const width = rect.width;
+    const height = rect.height;
+
+    svg.setAttribute('width', width);
+    svg.setAttribute('height', height);
+    svg.innerHTML = '';
+
+    // Color mapping
+    const typeColors = {
+        concept: '#6366f1',
+        document: '#10b981',
+        chapter: '#3b82f6',
+        claim: '#f59e0b',
+        conflict: '#ef4444',
+    };
+
+    // Build SVG elements
+    const g = document.createElementNS('http://www.w3.org/2000/svg', 'g');
+    svg.appendChild(g);
+
+    // Edges
+    const edgeGroup = document.createElementNS('http://www.w3.org/2000/svg', 'g');
+    g.appendChild(edgeGroup);
+
+    data.edges.forEach(edge => {
+        const line = document.createElementNS('http://www.w3.org/2000/svg', 'line');
+        line.setAttribute('stroke', '#475569');
+        line.setAttribute('stroke-width', Math.max(0.5, edge.weight));
+        line.setAttribute('stroke-opacity', '0.6');
+        line.dataset.source = edge.source;
+        line.dataset.target = edge.target;
+        edgeGroup.appendChild(line);
+    });
+
+    // Nodes
+    const nodeGroup = document.createElementNS('http://www.w3.org/2000/svg', 'g');
+    g.appendChild(nodeGroup);
+
+    data.nodes.forEach(node => {
+        const circle = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
+        circle.setAttribute('r', 6);
+        circle.setAttribute('fill', typeColors[node.node_type] || '#6366f1');
+        circle.setAttribute('stroke', '#1e293b');
+        circle.setAttribute('stroke-width', '1.5');
+        circle.dataset.id = node.id;
+        circle.style.cursor = 'pointer';
+
+        // Tooltip
+        circle.addEventListener('mouseenter', (e) => {
+            const tooltip = document.getElementById('node-tooltip');
+            tooltip.textContent = `${node.label} (${node.node_type})`;
+            tooltip.style.display = 'block';
+            tooltip.style.left = (e.clientX - svg.parentElement.getBoundingClientRect().left + 10) + 'px';
+            tooltip.style.top = (e.clientY - svg.parentElement.getBoundingClientRect().top - 30) + 'px';
+        });
+        circle.addEventListener('mouseleave', () => {
+            document.getElementById('node-tooltip').style.display = 'none';
+        });
+
+        nodeGroup.appendChild(circle);
+
+        // Label
+        const text = document.createElementNS('http://www.w3.org/2000/svg', 'text');
+        text.textContent = node.label.length > 8 ? node.label.slice(0, 8) + '…' : node.label;
+        text.setAttribute('font-size', '9');
+        text.setAttribute('fill', '#94a3b8');
+        text.setAttribute('dy', '15');
+        text.setAttribute('text-anchor', 'middle');
+        text.dataset.id = node.id;
+        nodeGroup.appendChild(text);
+    });
+
+    // Simple force simulation (no D3 dependency)
+    const nodes = data.nodes.map(n => ({ ...n, x: width/2 + (Math.random()-0.5)*200, y: height/2 + (Math.random()-0.5)*200, vx: 0, vy: 0 }));
+    const nodeMap = {};
+    nodes.forEach(n => nodeMap[n.id] = n);
+
+    const edges = data.edges.map(e => ({ source: nodeMap[e.source], target: nodeMap[e.target] })).filter(e => e.source && e.target);
+
+    function tick() {
+        // Repulsion
+        for (let i = 0; i < nodes.length; i++) {
+            for (let j = i+1; j < nodes.length; j++) {
+                let dx = nodes[j].x - nodes[i].x;
+                let dy = nodes[j].y - nodes[i].y;
+                let dist = Math.sqrt(dx*dx + dy*dy) || 1;
+                let force = 500 / (dist * dist);
+                nodes[i].vx -= dx/dist * force;
+                nodes[i].vy -= dy/dist * force;
+                nodes[j].vx += dx/dist * force;
+                nodes[j].vy += dy/dist * force;
+            }
+        }
+
+        // Attraction
+        edges.forEach(e => {
+            let dx = e.target.x - e.source.x;
+            let dy = e.target.y - e.source.y;
+            let dist = Math.sqrt(dx*dx + dy*dy) || 1;
+            let force = (dist - 80) * 0.01;
+            e.source.vx += dx/dist * force;
+            e.source.vy += dy/dist * force;
+            e.target.vx -= dx/dist * force;
+            e.target.vy -= dy/dist * force;
+        });
+
+        // Center gravity
+        nodes.forEach(n => {
+            n.vx += (width/2 - n.x) * 0.001;
+            n.vy += (height/2 - n.y) * 0.001;
+            n.vx *= 0.9;
+            n.vy *= 0.9;
+            n.x += n.vx;
+            n.y += n.vy;
+            n.x = Math.max(20, Math.min(width-20, n.x));
+            n.y = Math.max(20, Math.min(height-20, n.y));
+        });
+
+        // Update SVG
+        const circles = nodeGroup.querySelectorAll('circle');
+        const texts = nodeGroup.querySelectorAll('text');
+        const lines = edgeGroup.querySelectorAll('line');
+
+        circles.forEach((circle, i) => {
+            const node = nodes.find(n => n.id === circle.dataset.id);
+            if (node) {
+                circle.setAttribute('cx', node.x);
+                circle.setAttribute('cy', node.y);
+            }
+        });
+
+        texts.forEach((text, i) => {
+            const node = nodes.find(n => n.id === text.dataset.id);
+            if (node) {
+                text.setAttribute('x', node.x);
+                text.setAttribute('y', node.y);
+            }
+        });
+
+        lines.forEach(line => {
+            const s = nodeMap[line.dataset.source];
+            const t = nodeMap[line.dataset.target];
+            if (s && t) {
+                line.setAttribute('x1', s.x);
+                line.setAttribute('y1', s.y);
+                line.setAttribute('x2', t.x);
+                line.setAttribute('y2', t.y);
+            }
+        });
+    }
+
+    // Run simulation
+    let iter = 0;
+    function animate() {
+        tick();
+        iter++;
+        if (iter < 200) requestAnimationFrame(animate);
+    }
+    animate();
+}
+
+// ─── Conflicts ───────────────────────────────────────────────
+async function loadConflicts() {
+    const status = document.getElementById('filter-status').value;
+    const severity = document.getElementById('filter-severity').value;
+
+    let url = `${API_BASE}/conflicts?`;
+    if (status) url += `status=${status}&`;
+    if (severity) url += `severity=${severity}&`;
+
+    try {
+        const resp = await fetch(url);
+        const data = await resp.json();
+
+        if (!data.length) {
+            document.getElementById('conflict-list').innerHTML = `
+                <div class="empty-state"><div class="icon">✅</div><div class="message">暂无冲突</div></div>
+            `;
+            return;
+        }
+
+        document.getElementById('conflict-list').innerHTML = data.map(c => `
+            <li class="conflict-item" onclick="showConflictDetail('${c.id}')">
+                <div class="header">
+                    <span class="title">${c.title}</span>
+                    <span class="badge ${c.severity}">${c.severity}</span>
+                    <span class="badge ${c.status}">${c.status === 'unresolved' ? '待裁决' : c.status === 'resolved' ? '已裁决' : c.status}</span>
+                </div>
+                <div class="meta">
+                    类型: ${c.conflict_type} | 来源: ${c.source_books.join(', ')}
+                </div>
+            </li>
+        `).join('');
+    } catch (e) {
+        document.getElementById('conflict-list').innerHTML = `
+            <div class="empty-state"><div class="icon">⚔️</div><div class="message">暂无冲突数据</div></div>
+        `;
+    }
+}
+
+document.getElementById('filter-status').addEventListener('change', loadConflicts);
+document.getElementById('filter-severity').addEventListener('change', loadConflicts);
+
+async function showConflictDetail(id) {
+    try {
+        const resp = await fetch(`${API_BASE}/conflicts/${id}`);
+        const c = await resp.json();
+
+        const modal = document.getElementById('conflict-modal-content');
+        modal.innerHTML = `
+            <h2>${c.title}</h2>
+            <div style="margin:0.5rem 0;">
+                <span class="badge ${c.severity}">${c.severity}</span>
+                <span class="badge ${c.status}">${c.status}</span>
+                <span style="color:var(--text-muted);font-size:0.8rem;margin-left:0.5rem;">
+                    置信度: ${(c.detection_confidence * 100).toFixed(0)}%
+                </span>
+            </div>
+            <div class="sides-container">
+                ${c.sides.map((s, i) => `
+                    <div class="side-card">
+                        <div class="book">📖 ${s.source_book}</div>
+                        <div class="position">${s.position}</div>
+                    </div>
+                `).join('')}
+            </div>
+            ${c.analysis.possible_reasons?.length ? `
+                <div style="margin:1rem 0;padding:0.75rem;background:var(--bg);border-radius:0.5rem;">
+                    <div style="font-size:0.8rem;color:var(--text-muted);margin-bottom:0.25rem;">系统分析</div>
+                    <div style="font-size:0.9rem;">${c.analysis.possible_reasons.join('; ')}</div>
+                </div>
+            ` : ''}
+            <div class="verdict-form">
+                <label style="font-weight:600;">裁决</label>
+                <select id="verdict-decision">
+                    <option value="side">选择一方</option>
+                    <option value="both_valid">双方都有效</option>
+                    <option value="custom">自定义裁决</option>
+                    <option value="defer">暂缓处理</option>
+                    <option value="dismiss">非真正冲突</option>
+                </select>
+                <textarea id="verdict-notes" placeholder="裁决说明（可选）"></textarea>
+                <div class="btn-group">
+                    <button class="btn btn-primary" onclick="submitVerdict('${c.id}')">提交裁决</button>
+                    <button class="btn btn-secondary" onclick="closeModal()">关闭</button>
+                </div>
+            </div>
+        `;
+
+        document.getElementById('conflict-modal').classList.add('active');
+    } catch (e) {
+        console.error('Load conflict detail failed:', e);
+    }
+}
+
+async function submitVerdict(id) {
+    const decision = document.getElementById('verdict-decision').value;
+    const notes = document.getElementById('verdict-notes').value;
+
+    try {
+        await fetch(`${API_BASE}/conflicts/${id}/verdict`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ decision, notes, side_index: 0 }),
+        });
+        closeModal();
+        loadConflicts();
+    } catch (e) {
+        alert('裁决提交失败');
+    }
+}
+
+function closeModal() {
+    document.getElementById('conflict-modal').classList.remove('active');
+}
+
+document.getElementById('conflict-modal').addEventListener('click', (e) => {
+    if (e.target === document.getElementById('conflict-modal')) closeModal();
+});
+
+// ─── Documents ───────────────────────────────────────────────
+async function loadDocuments() {
+    try {
+        const resp = await fetch(`${API_BASE}/documents`);
+        const data = await resp.json();
+
+        if (!data.length) {
+            document.getElementById('documents-container').innerHTML = `
+                <div class="empty-state"><div class="icon">📚</div><div class="message">暂无文档，使用 <code>conflux import</code> 导入</div></div>
+            `;
+            return;
+        }
+
+        document.getElementById('documents-container').innerHTML = `
+            <table class="doc-table">
+                <thead><tr><th>标题</th><th>章节</th><th>字数</th><th>来源</th></tr></thead>
+                <tbody>
+                    ${data.map(d => `
+                        <tr>
+                            <td style="font-weight:600;">${d.title}</td>
+                            <td>${d.chapters}</td>
+                            <td>${d.words.toLocaleString()}</td>
+                            <td style="color:var(--text-muted);font-size:0.85rem;">${d.source || '-'}</td>
+                        </tr>
+                    `).join('')}
+                </tbody>
+            </table>
+        `;
+    } catch (e) {
+        document.getElementById('documents-container').innerHTML = `
+            <div class="empty-state"><div class="icon">📚</div><div class="message">暂无文档</div></div>
+        `;
+    }
+}
+
+// ─── Init ────────────────────────────────────────────────────
+loadStats();
+</script>
+</body>
+</html>

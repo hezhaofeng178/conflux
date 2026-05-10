@@ -1,0 +1,25 @@
+skill:
+  id: skill_0a9e7627
+  name: 收缩压知识
+  version: 1.0.0
+  source:
+    book: 运动生理学
+    chapter: 运动时的心血管反应
+    document_id: c5d4ae30-19c5-40ad-8c21-ee1a2f8bd5cc
+  description: 心脏收缩时动脉的最高压力，运动时可升至200 mmHg以上，是运动心血管反应的重要指标。
+  knowledge:
+    facts:
+    - 正常安静状态收缩压低于120 mmHg
+    - 运动时收缩压可升至200 mmHg以上
+    - 适度有氧运动可降低收缩压5-8 mmHg
+    - 运动后存在'运动后低血压'现象，可持续数小时
+    - 长期运动训练可改善血管弹性，降低外周阻力
+    procedures: []
+    caveats:
+    - 收缩压>180 mmHg时应避免剧烈运动
+    - 运动后低血压可能持续数小时，需注意防止体位性低血压
+  tags:
+  - 运动生理学
+  - 心血管
+  - 血压
+  related_skills: []

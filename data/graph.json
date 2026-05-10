@@ -1,0 +1,581 @@
+{
+  "nodes": [
+    {
+      "id": "concept_3db13539",
+      "label": "心率",
+      "node_type": "concept",
+      "properties": {
+        "definition": "心脏每分钟跳动的次数",
+        "source_book": "运动生理学",
+        "concept_type": "entity"
+      },
+      "source_id": "c5d4ae30-19c5-40ad-8c21-ee1a2f8bd5cc"
+    },
+    {
+      "id": "concept_c8a66a3b",
+      "label": "心输出量",
+      "node_type": "concept",
+      "properties": {
+        "definition": "心脏每分钟泵出的血量，等于心率乘以每搏输出量",
+        "source_book": "运动生理学",
+        "concept_type": "property"
+      },
+      "source_id": "c5d4ae30-19c5-40ad-8c21-ee1a2f8bd5cc"
+    },
+    {
+      "id": "concept_79c4c8be",
+      "label": "血压",
+      "node_type": "concept",
+      "properties": {
+        "definition": "血液对血管壁的压力，包括收缩压和舒张压",
+        "source_book": "运动生理学",
+        "concept_type": "property"
+      },
+      "source_id": "c5d4ae30-19c5-40ad-8c21-ee1a2f8bd5cc"
+    },
+    {
+      "id": "concept_3857f746",
+      "label": "收缩压",
+      "node_type": "concept",
+      "properties": {
+        "definition": "心脏收缩时动脉的最高压力",
+        "source_book": "运动生理学",
+        "concept_type": "property"
+      },
+      "source_id": "c5d4ae30-19c5-40ad-8c21-ee1a2f8bd5cc"
+    },
+    {
+      "id": "concept_06cfe5a8",
+      "label": "舒张压",
+      "node_type": "concept",
+      "properties": {
+        "definition": "心脏舒张时动脉的最低压力",
+        "source_book": "运动生理学",
+        "concept_type": "property"
+      },
+      "source_id": "c5d4ae30-19c5-40ad-8c21-ee1a2f8bd5cc"
+    },
+    {
+      "id": "concept_d40f96af",
+      "label": "最大摄氧量",
+      "node_type": "concept",
+      "properties": {
+        "definition": "极限运动时机体摄取氧气的最大能力",
+        "source_book": "运动生理学",
+        "concept_type": "property"
+      },
+      "source_id": "c5d4ae30-19c5-40ad-8c21-ee1a2f8bd5cc"
+    },
+    {
+      "id": "concept_1dec1635",
+      "label": "每搏输出量",
+      "node_type": "concept",
+      "properties": {
+        "definition": "心脏每次搏动泵出的血量",
+        "source_book": "运动生理学",
+        "concept_type": "property"
+      },
+      "source_id": "c5d4ae30-19c5-40ad-8c21-ee1a2f8bd5cc"
+    },
+    {
+      "id": "concept_c99e8969",
+      "label": "运动后低血压",
+      "node_type": "concept",
+      "properties": {
+        "definition": "运动后血压暂时下降的现象",
+        "source_book": "运动生理学",
+        "concept_type": "process"
+      },
+      "source_id": "c5d4ae30-19c5-40ad-8c21-ee1a2f8bd5cc"
+    },
+    {
+      "id": "concept_1e7c93d4",
+      "label": "高血压",
+      "node_type": "concept",
+      "properties": {
+        "definition": "血压持续偏高的疾病状态",
+        "source_book": "运动生理学",
+        "concept_type": "category"
+      },
+      "source_id": "c5d4ae30-19c5-40ad-8c21-ee1a2f8bd5cc"
+    },
+    {
+      "id": "concept_82b9e4b9",
+      "label": "心力衰竭",
+      "node_type": "concept",
+      "properties": {
+        "definition": "心脏泵血功能减退的疾病",
+        "source_book": "运动生理学",
+        "concept_type": "category"
+      },
+      "source_id": "c5d4ae30-19c5-40ad-8c21-ee1a2f8bd5cc"
+    },
+    {
+      "id": "concept_2ca5bdfb",
+      "label": "有氧运动",
+      "node_type": "concept",
+      "properties": {
+        "definition": "以有氧代谢为主的运动",
+        "source_book": "运动生理学",
+        "concept_type": "category"
+      },
+      "source_id": "c5d4ae30-19c5-40ad-8c21-ee1a2f8bd5cc"
+    },
+    {
+      "id": "concept_d7c9392d",
+      "label": "气体交换",
+      "node_type": "concept",
+      "properties": {
+        "definition": "吸入氧气排出二氧化碳的过程",
+        "source_book": "呼吸系统",
+        "concept_type": "process"
+      },
+      "source_id": "e446c79c-5d43-43f6-a9f8-92f01304967a"
+    },
+    {
+      "id": "concept_3b76b8fb",
+      "label": "外呼吸",
+      "node_type": "concept",
+      "properties": {
+        "definition": "肺泡与肺毛细血管之间的气体交换",
+        "source_book": "呼吸系统",
+        "concept_type": "process"
+      },
+      "source_id": "e446c79c-5d43-43f6-a9f8-92f01304967a"
+    },
+    {
+      "id": "concept_9cb48d09",
+      "label": "内呼吸",
+      "node_type": "concept",
+      "properties": {
+        "definition": "血液与组织细胞之间的气体交换",
+        "source_book": "呼吸系统",
+        "concept_type": "process"
+      },
+      "source_id": "e446c79c-5d43-43f6-a9f8-92f01304967a"
+    },
+    {
+      "id": "concept_41bfc332",
+      "label": "肺活量",
+      "node_type": "concept",
+      "properties": {
+        "definition": "最大吸气后尽力呼出的气体总量",
+        "source_book": "呼吸系统",
+        "concept_type": "property"
+      },
+      "source_id": "e446c79c-5d43-43f6-a9f8-92f01304967a"
+    },
+    {
+      "id": "concept_4c828870",
+      "label": "潮气量",
+      "node_type": "concept",
+      "properties": {
+        "definition": "平静呼吸时每次吸入或呼出的气体量",
+        "source_book": "呼吸系统",
+        "concept_type": "property"
+      },
+      "source_id": "e446c79c-5d43-43f6-a9f8-92f01304967a"
+    },
+    {
+      "id": "concept_31ebe8fc",
+      "label": "每分通气量",
+      "node_type": "concept",
+      "properties": {
+        "definition": "潮气量乘以呼吸频率",
+        "source_book": "呼吸系统",
+        "concept_type": "property"
+      },
+      "source_id": "e446c79c-5d43-43f6-a9f8-92f01304967a"
+    },
+    {
+      "id": "concept_1a64dcea",
+      "label": "呼吸频率",
+      "node_type": "concept",
+      "properties": {
+        "definition": "每分钟呼吸次数",
+        "source_book": "呼吸系统",
+        "concept_type": "property"
+      },
+      "source_id": "e446c79c-5d43-43f6-a9f8-92f01304967a"
+    },
+    {
+      "id": "concept_d87bbc17",
+      "label": "血氧饱和度",
+      "node_type": "concept",
+      "properties": {
+        "definition": "血红蛋白与氧气结合的百分比",
+        "source_book": "呼吸系统",
+        "concept_type": "property"
+      },
+      "source_id": "e446c79c-5d43-43f6-a9f8-92f01304967a"
+    },
+    {
+      "id": "concept_08de0a12",
+      "label": "肺水肿",
+      "node_type": "concept",
+      "properties": {
+        "definition": "肺部液体异常积聚",
+        "source_book": "呼吸系统",
+        "concept_type": "entity"
+      },
+      "source_id": "e446c79c-5d43-43f6-a9f8-92f01304967a"
+    },
+    {
+      "id": "concept_8bd7172d",
+      "label": "低氧血症",
+      "node_type": "concept",
+      "properties": {
+        "definition": "血液中氧气含量过低",
+        "source_book": "呼吸系统",
+        "concept_type": "entity"
+      },
+      "source_id": "e446c79c-5d43-43f6-a9f8-92f01304967a"
+    },
+    {
+      "id": "concept_5325249a",
+      "label": "肺循环",
+      "node_type": "concept",
+      "properties": {
+        "definition": "右心室泵血到肺动脉，经肺泡气体交换后回左心房",
+        "source_book": "呼吸系统",
+        "concept_type": "process"
+      },
+      "source_id": "e446c79c-5d43-43f6-a9f8-92f01304967a"
+    },
+    {
+      "id": "concept_d07fe3ed",
+      "label": "血红蛋白",
+      "node_type": "concept",
+      "properties": {
+        "definition": "红细胞中负责运输氧气的蛋白质",
+        "source_book": "呼吸系统",
+        "concept_type": "entity"
+      },
+      "source_id": "e446c79c-5d43-43f6-a9f8-92f01304967a"
+    },
+    {
+      "id": "concept_7722a8f4",
+      "label": "环境氧浓度",
+      "node_type": "concept",
+      "properties": {
+        "definition": "空气中氧气的比例",
+        "source_book": "呼吸系统",
+        "concept_type": "property"
+      },
+      "source_id": "e446c79c-5d43-43f6-a9f8-92f01304967a"
+    },
+    {
+      "id": "concept_3dbbacd4",
+      "label": "心脏",
+      "node_type": "concept",
+      "properties": {
+        "definition": "人体最重要的器官之一，通过收缩和舒张将血液泵送到全身",
+        "source_book": "心血管系统",
+        "concept_type": "entity"
+      },
+      "source_id": "0ff42484-71f5-4ac3-a56b-d4c08456d736"
+    },
+    {
+      "id": "concept_e93b5159",
+      "label": "左心房",
+      "node_type": "concept",
+      "properties": {
+        "definition": "心脏的四个腔室之一，位于左上部",
+        "source_book": "心血管系统",
+        "concept_type": "entity"
+      },
+      "source_id": "0ff42484-71f5-4ac3-a56b-d4c08456d736"
+    },
+    {
+      "id": "concept_690cf5b6",
+      "label": "左心室",
+      "node_type": "concept",
+      "properties": {
+        "definition": "心脏的四个腔室之一，负责将富含氧气的血液泵入主动脉",
+        "source_book": "心血管系统",
+        "concept_type": "entity"
+      },
+      "source_id": "0ff42484-71f5-4ac3-a56b-d4c08456d736"
+    },
+    {
+      "id": "concept_6fd50752",
+      "label": "右心房",
+      "node_type": "concept",
+      "properties": {
+        "definition": "心脏的四个腔室之一，位于右上部",
+        "source_book": "心血管系统",
+        "concept_type": "entity"
+      },
+      "source_id": "0ff42484-71f5-4ac3-a56b-d4c08456d736"
+    },
+    {
+      "id": "concept_880eefcc",
+      "label": "右心室",
+      "node_type": "concept",
+      "properties": {
+        "definition": "心脏的四个腔室之一，负责将缺氧血液泵入肺动脉",
+        "source_book": "心血管系统",
+        "concept_type": "entity"
+      },
+      "source_id": "0ff42484-71f5-4ac3-a56b-d4c08456d736"
+    },
+    {
+      "id": "concept_d9a2a724",
+      "label": "主动脉",
+      "node_type": "concept",
+      "properties": {
+        "definition": "将富含氧气的血液从左心室输送到全身的大动脉",
+        "source_book": "心血管系统",
+        "concept_type": "entity"
+      },
+      "source_id": "0ff42484-71f5-4ac3-a56b-d4c08456d736"
+    },
+    {
+      "id": "concept_03568e27",
+      "label": "肺动脉",
+      "node_type": "concept",
+      "properties": {
+        "definition": "将缺氧血液从右心室输送到肺部进行气体交换的动脉",
+        "source_book": "心血管系统",
+        "concept_type": "entity"
+      },
+      "source_id": "0ff42484-71f5-4ac3-a56b-d4c08456d736"
+    },
+    {
+      "id": "concept_ddce464b",
+      "label": "冠心病",
+      "node_type": "concept",
+      "properties": {
+        "definition": "导致心肌缺血的心脏病，是心力衰竭的常见原因",
+        "source_book": "心血管系统",
+        "concept_type": "category"
+      },
+      "source_id": "0ff42484-71f5-4ac3-a56b-d4c08456d736"
+    },
+    {
+      "id": "concept_08aa0c32",
+      "label": "心肌",
+      "node_type": "concept",
+      "properties": {
+        "definition": "心脏的肌肉组织，收缩产生泵血动力",
+        "source_book": "心血管系统",
+        "concept_type": "entity"
+      },
+      "source_id": "0ff42484-71f5-4ac3-a56b-d4c08456d736"
+    },
+    {
+      "id": "concept_6683d575",
+      "label": "心脏瓣膜疾病",
+      "node_type": "concept",
+      "properties": {
+        "definition": "心脏瓣膜功能异常导致的疾病，是心力衰竭的常见原因",
+        "source_book": "心血管系统",
+        "concept_type": "category"
+      },
+      "source_id": "0ff42484-71f5-4ac3-a56b-d4c08456d736"
+    }
+  ],
+  "edges": [
+    {
+      "source_node_id": "concept_3db13539",
+      "target_node_id": "concept_c8a66a3b",
+      "edge_type": "semantic",
+      "weight": 1.0,
+      "confidence": 1.0,
+      "properties": {
+        "relation_type": "regulates"
+      }
+    },
+    {
+      "source_node_id": "concept_c8a66a3b",
+      "target_node_id": "concept_d40f96af",
+      "edge_type": "semantic",
+      "weight": 1.0,
+      "confidence": 1.0,
+      "properties": {
+        "relation_type": "related_to"
+      }
+    },
+    {
+      "source_node_id": "concept_3857f746",
+      "target_node_id": "concept_79c4c8be",
+      "edge_type": "semantic",
+      "weight": 1.0,
+      "confidence": 1.0,
+      "properties": {
+        "relation_type": "part_of"
+      }
+    },
+    {
+      "source_node_id": "concept_06cfe5a8",
+      "target_node_id": "concept_79c4c8be",
+      "edge_type": "semantic",
+      "weight": 1.0,
+      "confidence": 1.0,
+      "properties": {
+        "relation_type": "part_of"
+      }
+    },
+    {
+      "source_node_id": "concept_1dec1635",
+      "target_node_id": "concept_c8a66a3b",
+      "edge_type": "semantic",
+      "weight": 1.0,
+      "confidence": 1.0,
+      "properties": {
+        "relation_type": "regulates"
+      }
+    },
+    {
+      "source_node_id": "concept_c99e8969",
+      "target_node_id": "concept_79c4c8be",
+      "edge_type": "semantic",
+      "weight": 1.0,
+      "confidence": 1.0,
+      "properties": {
+        "relation_type": "causes"
+      }
+    },
+    {
+      "source_node_id": "concept_2ca5bdfb",
+      "target_node_id": "concept_1e7c93d4",
+      "edge_type": "semantic",
+      "weight": 1.0,
+      "confidence": 1.0,
+      "properties": {
+        "relation_type": "related_to"
+      }
+    },
+    {
+      "source_node_id": "concept_2ca5bdfb",
+      "target_node_id": "concept_82b9e4b9",
+      "edge_type": "semantic",
+      "weight": 1.0,
+      "confidence": 1.0,
+      "properties": {
+        "relation_type": "related_to"
+      }
+    },
+    {
+      "source_node_id": "concept_3b76b8fb",
+      "target_node_id": "concept_d7c9392d",
+      "edge_type": "semantic",
+      "weight": 1.0,
+      "confidence": 1.0,
+      "properties": {
+        "relation_type": "part_of"
+      }
+    },
+    {
+      "source_node_id": "concept_9cb48d09",
+      "target_node_id": "concept_d7c9392d",
+      "edge_type": "semantic",
+      "weight": 1.0,
+      "confidence": 1.0,
+      "properties": {
+        "relation_type": "part_of"
+      }
+    },
+    {
+      "source_node_id": "concept_31ebe8fc",
+      "target_node_id": "concept_4c828870",
+      "edge_type": "semantic",
+      "weight": 1.0,
+      "confidence": 1.0,
+      "properties": {
+        "relation_type": "related_to"
+      }
+    },
+    {
+      "source_node_id": "concept_31ebe8fc",
+      "target_node_id": "concept_1a64dcea",
+      "edge_type": "semantic",
+      "weight": 1.0,
+      "confidence": 1.0,
+      "properties": {
+        "relation_type": "related_to"
+      }
+    },
+    {
+      "source_node_id": "concept_d87bbc17",
+      "target_node_id": "concept_d07fe3ed",
+      "edge_type": "semantic",
+      "weight": 1.0,
+      "confidence": 1.0,
+      "properties": {
+        "relation_type": "regulates"
+      }
+    },
+    {
+      "source_node_id": "concept_d87bbc17",
+      "target_node_id": "concept_7722a8f4",
+      "edge_type": "semantic",
+      "weight": 1.0,
+      "confidence": 1.0,
+      "properties": {
+        "relation_type": "regulates"
+      }
+    },
+    {
+      "source_node_id": "concept_e93b5159",
+      "target_node_id": "concept_3dbbacd4",
+      "edge_type": "semantic",
+      "weight": 1.0,
+      "confidence": 1.0,
+      "properties": {
+        "relation_type": "part_of"
+      }
+    },
+    {
+      "source_node_id": "concept_690cf5b6",
+      "target_node_id": "concept_3dbbacd4",
+      "edge_type": "semantic",
+      "weight": 1.0,
+      "confidence": 1.0,
+      "properties": {
+        "relation_type": "part_of"
+      }
+    },
+    {
+      "source_node_id": "concept_690cf5b6",
+      "target_node_id": "concept_d9a2a724",
+      "edge_type": "semantic",
+      "weight": 1.0,
+      "confidence": 1.0,
+      "properties": {
+        "relation_type": "related_to"
+      }
+    },
+    {
+      "source_node_id": "concept_6fd50752",
+      "target_node_id": "concept_3dbbacd4",
+      "edge_type": "semantic",
+      "weight": 1.0,
+      "confidence": 1.0,
+      "properties": {
+        "relation_type": "part_of"
+      }
+    },
+    {
+      "source_node_id": "concept_880eefcc",
+      "target_node_id": "concept_3dbbacd4",
+      "edge_type": "semantic",
+      "weight": 1.0,
+      "confidence": 1.0,
+      "properties": {
+        "relation_type": "part_of"
+      }
+    },
+    {
+      "source_node_id": "concept_880eefcc",
+      "target_node_id": "concept_03568e27",
+      "edge_type": "semantic",
+      "weight": 1.0,
+      "confidence": 1.0,
+      "properties": {
+        "relation_type": "related_to"
+      }
+    }
+  ],
+  "subnets": {}
+}

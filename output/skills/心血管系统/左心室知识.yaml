@@ -1,0 +1,21 @@
+skill:
+  id: skill_a9ee0098
+  name: 左心室知识
+  version: 1.0.0
+  source:
+    book: 心血管系统
+    chapter: 心脏的基本功能
+    document_id: 0ff42484-71f5-4ac3-a56b-d4c08456d736
+  description: 心脏的四个腔室之一，负责将富含氧气的血液泵入主动脉，供应全身。
+  knowledge:
+    facts:
+    - 左心室将氧合血泵入主动脉
+    - 左心室壁最厚，收缩力最强
+    procedures: []
+    caveats:
+    - 左心室肥厚或扩张可导致心衰
+  tags:
+  - 心血管系统
+  - 心脏
+  - 心室
+  related_skills: []

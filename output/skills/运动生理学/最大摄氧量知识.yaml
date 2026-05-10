@@ -1,0 +1,26 @@
+skill:
+  id: skill_a6ae8830
+  name: 最大摄氧量知识
+  version: 1.0.0
+  source:
+    book: 运动生理学
+    chapter: 运动时的心血管反应
+    document_id: c5d4ae30-19c5-40ad-8c21-ee1a2f8bd5cc
+  description: 极限运动时机体摄取氧气的最大能力，是衡量心肺耐力的金标准。
+  knowledge:
+    facts:
+    - 普通成人VO₂max约35-45 ml/kg/min
+    - 精英耐力运动员可达70-85 ml/kg/min
+    - VO₂max主要受心输出量限制
+    - 运动训练可提高心衰患者VO₂max 10-30%
+    - VO₂max反映整体氧运输系统功能
+    procedures: []
+    caveats:
+    - 心衰患者进行VO₂max测试需严格医疗监护
+    - VO₂max受遗传因素影响较大
+    - 测试时必须达到力竭状态才能准确测量
+  tags:
+  - 运动生理学
+  - 心肺耐力
+  - 有氧能力
+  related_skills: []

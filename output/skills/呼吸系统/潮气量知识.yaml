@@ -1,0 +1,24 @@
+skill:
+  id: skill_ea96e89e
+  name: 潮气量知识
+  version: 1.0.0
+  source:
+    book: 呼吸系统
+    chapter: 呼吸的基本过程
+    document_id: e446c79c-5d43-43f6-a9f8-92f01304967a
+  description: 平静呼吸时每次吸入或呼出的气体量，约500毫升，是基础肺功能参数。
+  knowledge:
+    facts:
+    - 潮气量（Tidal Volume, TV）定义：平静呼吸时每次吸入或呼出的气体量。
+    - 正常成人约500毫升。
+    - 与每分通气量直接相关：每分通气量 = 潮气量 × 呼吸频率。
+    procedures: []
+    caveats:
+    - 潮气量因个体体型、代谢率不同而有差异，应以理想体重校正。
+    - 测量时需确保受试者处于完全平静状态，避免深吸气或讲话干扰。
+    - 过低提示限制性通气障碍，过高提示可能过度通气。
+  tags:
+  - 呼吸系统
+  - 肺功能
+  - 潮气量
+  related_skills: []

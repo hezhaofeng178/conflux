@@ -1,0 +1,28 @@
+skill:
+  id: skill_8655903d
+  name: 外周阻力知识
+  version: 1.0.0
+  source:
+    book: 运动生理学
+    chapter: 运动与血压
+    document_id: c5d4ae30-19c5-40ad-8c21-ee1a2f8bd5cc
+  description: 解释外周阻力概念及其在有氧运动降压中的作用，提供运动建议。
+  knowledge:
+    facts:
+    - 外周阻力是血液流经小动脉和毛细血管时遇到的阻力。
+    - 长期有氧运动可改善血管弹性，降低外周阻力。
+    - 每周150分钟中等强度运动可降低收缩压5-8 mmHg。
+    procedures:
+    - trigger: 当用户询问运动如何降低血压或外周阻力时
+      steps:
+      - 解释外周阻力定义及其与血压的关系。
+      - 说明有氧运动通过改善血管弹性降低外周阻力。
+      - 推荐每周150分钟中等强度有氧运动。
+    caveats:
+    - 收缩压>180 mmHg或舒张压>110 mmHg时应避免剧烈运动。
+  tags:
+  - 运动生理学
+  - 血压
+  - 外周阻力
+  - 有氧运动
+  related_skills: []

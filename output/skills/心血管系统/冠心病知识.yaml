@@ -1,0 +1,24 @@
+skill:
+  id: skill_0984652d
+  name: 冠心病知识
+  version: 1.0.0
+  source:
+    book: 心血管系统
+    chapter: 心脏的基本功能
+    document_id: 0ff42484-71f5-4ac3-a56b-d4c08456d736
+  description: 由于冠状动脉粥样硬化导致心肌缺血的心脏病，是心力衰竭的常见原因。
+  knowledge:
+    facts:
+    - 冠状动脉为心肌供血，狭窄或堵塞引发缺血。
+    - 危险因素包括高血脂、高血压、吸烟、糖尿病等。
+    - 可表现为心绞痛、心肌梗死，甚至心力衰竭。
+    procedures: []
+    caveats:
+    - 不是唯一的心力衰竭原因（还有高血压、心肌病等）。
+    - 早期可能无症状，需风险筛查。
+  tags:
+  - 心血管系统
+  - 心脏病
+  - 冠心病
+  - 缺血性心脏病
+  related_skills: []

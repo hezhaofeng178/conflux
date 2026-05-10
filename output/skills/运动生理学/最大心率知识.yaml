@@ -1,0 +1,28 @@
+skill:
+  id: skill_4bbff064
+  name: 最大心率知识
+  version: 1.0.0
+  source:
+    book: 运动生理学
+    chapter: 运动时的心血管反应
+    document_id: c5d4ae30-19c5-40ad-8c21-ee1a2f8bd5cc
+  description: 估算个体最大心率，用于运动强度设定和心血管健康评估。
+  knowledge:
+    facts:
+    - 最大心率是运动时心率能达到的最高值。
+    - 常用估算公式为220减年龄。
+    - 最大心率随年龄增长而下降。
+    procedures:
+    - trigger: 需要设定运动强度或评估心血管功能时
+      steps:
+      - 获取个体的年龄（岁）。
+      - 应用公式：最大心率 = 220 - 年龄。
+    caveats:
+    - 该公式为群体估算值，个体差异较大，精确测量需通过运动负荷试验。
+    - 不适用于服用影响心率药物或患有心血管疾病的人群。
+  tags:
+  - 运动生理学
+  - 心率
+  - 运动强度
+  - 心血管健康
+  related_skills: []

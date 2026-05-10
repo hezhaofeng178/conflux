@@ -1,0 +1,22 @@
+skill:
+  id: skill_bba85c9e
+  name: 右心室知识
+  version: 1.0.0
+  source:
+    book: 心血管系统
+    chapter: 心脏的基本功能
+    document_id: 0ff42484-71f5-4ac3-a56b-d4c08456d736
+  description: 心脏的四个腔室之一，负责将缺氧血液泵入肺动脉以进行气体交换。
+  knowledge:
+    facts:
+    - 右心室位于心脏的右前部，壁较左心室薄，收缩压通常为15-30 mmHg。
+    - 右心室通过肺动脉瓣将血液射入肺动脉，进入肺循环。
+    procedures: []
+    caveats:
+    - 右心室壁厚度仅为左心室的1/3，因此对后负荷增加（如肺动脉高压）耐受性较差。
+    - 右心室心肌梗死可导致低血压和心源性休克，处理时应避免使用硝酸酯类药物。
+  tags:
+  - 心血管系统
+  - 心脏解剖
+  - 右心室
+  related_skills: []

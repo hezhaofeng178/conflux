@@ -1,0 +1,25 @@
+skill:
+  id: skill_c7141081
+  name: 心率知识
+  version: 1.0.0
+  source:
+    book: 运动生理学
+    chapter: 运动时的心血管反应
+    document_id: c5d4ae30-19c5-40ad-8c21-ee1a2f8bd5cc
+  description: 心率是心脏每分钟跳动的次数，在运动生理学中用于评估运动强度和心血管反应。
+  knowledge:
+    facts:
+    - 安静时心率范围为60-100次/分
+    - 最大心率约为220减去年龄
+    - 运动时心率会加快以满足增加的血流需求
+    procedures: []
+    caveats:
+    - 最大心率公式为估算值，个体差异较大
+    - 部分药物或疾病会影响心率反应
+    - 测量时需保持静止或使用准确设备
+  tags:
+  - 运动生理学
+  - 心率
+  - 心血管
+  - 运动强度
+  related_skills: []

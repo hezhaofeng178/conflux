@@ -1,0 +1,26 @@
+skill:
+  id: skill_dd71edb3
+  name: 心脏知识
+  version: 1.0.0
+  source:
+    book: 心血管系统
+    chapter: 心脏的基本功能
+    document_id: 0ff42484-71f5-4ac3-a56b-d4c08456d736
+  description: 人体最重要的器官之一，通过收缩和舒张将血液泵送到全身。提供心率、心输出量、血压等关键参数。
+  knowledge:
+    facts:
+    - 心脏每分钟跳动约60-100次（心率）
+    - 心输出量=心率×每搏输出量，正常4-8升/分钟
+    - 每搏输出量正常约60-130毫升
+    - 收缩压<120 mmHg，舒张压<80 mmHg
+    - 高血压诊断标准：≥140/90 mmHg
+    procedures: []
+    caveats:
+    - 心率、血压等受多种因素影响，需结合临床背景
+    - 这些数值为一般成人参考，儿童/老年人不同
+  tags:
+  - 心血管系统
+  - 心脏
+  - 血压
+  - 心率
+  related_skills: []

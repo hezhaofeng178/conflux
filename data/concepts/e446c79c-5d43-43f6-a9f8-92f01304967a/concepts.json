@@ -1,0 +1,226 @@
+[
+  {
+    "id": "concept_d7c9392d",
+    "name": "气体交换",
+    "aliases": [],
+    "concept_type": "process",
+    "definition": "吸入氧气排出二氧化碳的过程",
+    "description": null,
+    "source_book": "呼吸系统",
+    "source_chapter": "呼吸的基本过程",
+    "source_section": null,
+    "source_document_id": null,
+    "domain": "呼吸系统",
+    "tags": [],
+    "confidence": 0.8,
+    "extracted_at": null
+  },
+  {
+    "id": "concept_3b76b8fb",
+    "name": "外呼吸",
+    "aliases": [
+      "肺呼吸"
+    ],
+    "concept_type": "process",
+    "definition": "肺泡与肺毛细血管之间的气体交换",
+    "description": null,
+    "source_book": "呼吸系统",
+    "source_chapter": "呼吸的基本过程",
+    "source_section": null,
+    "source_document_id": null,
+    "domain": "呼吸系统",
+    "tags": [],
+    "confidence": 0.8,
+    "extracted_at": null
+  },
+  {
+    "id": "concept_9cb48d09",
+    "name": "内呼吸",
+    "aliases": [
+      "组织呼吸"
+    ],
+    "concept_type": "process",
+    "definition": "血液与组织细胞之间的气体交换",
+    "description": null,
+    "source_book": "呼吸系统",
+    "source_chapter": "呼吸的基本过程",
+    "source_section": null,
+    "source_document_id": null,
+    "domain": "呼吸系统",
+    "tags": [],
+    "confidence": 0.8,
+    "extracted_at": null
+  },
+  {
+    "id": "concept_41bfc332",
+    "name": "肺活量",
+    "aliases": [
+      "VC"
+    ],
+    "concept_type": "property",
+    "definition": "最大吸气后尽力呼出的气体总量",
+    "description": null,
+    "source_book": "呼吸系统",
+    "source_chapter": "呼吸的基本过程",
+    "source_section": null,
+    "source_document_id": null,
+    "domain": "肺功能",
+    "tags": [],
+    "confidence": 0.8,
+    "extracted_at": null
+  },
+  {
+    "id": "concept_4c828870",
+    "name": "潮气量",
+    "aliases": [
+      "TV"
+    ],
+    "concept_type": "property",
+    "definition": "平静呼吸时每次吸入或呼出的气体量",
+    "description": null,
+    "source_book": "呼吸系统",
+    "source_chapter": "呼吸的基本过程",
+    "source_section": null,
+    "source_document_id": null,
+    "domain": "肺功能",
+    "tags": [],
+    "confidence": 0.8,
+    "extracted_at": null
+  },
+  {
+    "id": "concept_31ebe8fc",
+    "name": "每分通气量",
+    "aliases": [],
+    "concept_type": "property",
+    "definition": "潮气量乘以呼吸频率",
+    "description": null,
+    "source_book": "呼吸系统",
+    "source_chapter": "呼吸的基本过程",
+    "source_section": null,
+    "source_document_id": null,
+    "domain": "肺功能",
+    "tags": [],
+    "confidence": 0.8,
+    "extracted_at": null
+  },
+  {
+    "id": "concept_1a64dcea",
+    "name": "呼吸频率",
+    "aliases": [],
+    "concept_type": "property",
+    "definition": "每分钟呼吸次数",
+    "description": null,
+    "source_book": "呼吸系统",
+    "source_chapter": "呼吸的基本过程",
+    "source_section": null,
+    "source_document_id": null,
+    "domain": "呼吸系统",
+    "tags": [],
+    "confidence": 0.8,
+    "extracted_at": null
+  },
+  {
+    "id": "concept_d87bbc17",
+    "name": "血氧饱和度",
+    "aliases": [
+      "SpO2"
+    ],
+    "concept_type": "property",
+    "definition": "血红蛋白与氧气结合的百分比",
+    "description": null,
+    "source_book": "呼吸系统",
+    "source_chapter": "呼吸的基本过程",
+    "source_section": null,
+    "source_document_id": null,
+    "domain": "血氧",
+    "tags": [],
+    "confidence": 0.8,
+    "extracted_at": null
+  },
+  {
+    "id": "concept_08de0a12",
+    "name": "肺水肿",
+    "aliases": [],
+    "concept_type": "entity",
+    "definition": "肺部液体异常积聚",
+    "description": null,
+    "source_book": "呼吸系统",
+    "source_chapter": "呼吸的基本过程",
+    "source_section": null,
+    "source_document_id": null,
+    "domain": "呼吸系统",
+    "tags": [],
+    "confidence": 0.8,
+    "extracted_at": null
+  },
+  {
+    "id": "concept_8bd7172d",
+    "name": "低氧血症",
+    "aliases": [],
+    "concept_type": "entity",
+    "definition": "血液中氧气含量过低",
+    "description": null,
+    "source_book": "呼吸系统",
+    "source_chapter": "呼吸的基本过程",
+    "source_section": null,
+    "source_document_id": null,
+    "domain": "血氧",
+    "tags": [],
+    "confidence": 0.8,
+    "extracted_at": null
+  },
+  {
+    "id": "concept_5325249a",
+    "name": "肺循环",
+    "aliases": [
+      "小循环"
+    ],
+    "concept_type": "process",
+    "definition": "右心室泵血到肺动脉，经肺泡气体交换后回左心房",
+    "description": null,
+    "source_book": "呼吸系统",
+    "source_chapter": "呼吸的基本过程",
+    "source_section": null,
+    "source_document_id": null,
+    "domain": "循环系统",
+    "tags": [],
+    "confidence": 0.8,
+    "extracted_at": null
+  },
+  {
+    "id": "concept_d07fe3ed",
+    "name": "血红蛋白",
+    "aliases": [
+      "Hb"
+    ],
+    "concept_type": "entity",
+    "definition": "红细胞中负责运输氧气的蛋白质",
+    "description": null,
+    "source_book": "呼吸系统",
+    "source_chapter": "呼吸的基本过程",
+    "source_section": null,
+    "source_document_id": null,
+    "domain": "血液",
+    "tags": [],
+    "confidence": 0.8,
+    "extracted_at": null
+  },
+  {
+    "id": "concept_7722a8f4",
+    "name": "环境氧浓度",
+    "aliases": [
+      "氧浓度"
+    ],
+    "concept_type": "property",
+    "definition": "空气中氧气的比例",
+    "description": null,
+    "source_book": "呼吸系统",
+    "source_chapter": "呼吸的基本过程",
+    "source_section": null,
+    "source_document_id": null,
+    "domain": "环境",
+    "tags": [],
+    "confidence": 0.8,
+    "extracted_at": null
+  }
+]

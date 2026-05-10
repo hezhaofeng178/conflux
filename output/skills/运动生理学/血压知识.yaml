@@ -1,0 +1,26 @@
+skill:
+  id: skill_b0bf03d7
+  name: 血压知识
+  version: 1.0.0
+  source:
+    book: 运动生理学
+    chapter: 运动时的心血管反应
+    document_id: c5d4ae30-19c5-40ad-8c21-ee1a2f8bd5cc
+  description: 血压是血液对血管壁的压力，通常以收缩压和舒张压表示，在运动生理学中用于监控心血管反应和运动安全。
+  knowledge:
+    facts:
+    - 运动时收缩压可升高至200 mmHg以上，舒张压变化不大
+    - 适度有氧运动每周150分钟可降低收缩压5-8 mmHg
+    - 运动后存在持续数小时的'运动后低血压'现象
+    - 收缩压>180 mmHg或舒张压>110 mmHg时应避免剧烈运动
+    procedures: []
+    caveats:
+    - 测量时需保持手臂与心脏同高，避免说话或移动
+    - 动态血压变化需要连续监测才能准确评估
+    - 高血压患者运动前应咨询医生，避免血压过高时运动
+  tags:
+  - 运动生理学
+  - 血压
+  - 高血压
+  - 心血管安全
+  related_skills: []

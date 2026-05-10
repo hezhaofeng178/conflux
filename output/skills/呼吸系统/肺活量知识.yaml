@@ -1,0 +1,24 @@
+skill:
+  id: skill_0b308f81
+  name: 肺活量知识
+  version: 1.0.0
+  source:
+    book: 呼吸系统
+    chapter: 呼吸的基本过程
+    document_id: e446c79c-5d43-43f6-a9f8-92f01304967a
+  description: 最大吸气后尽力呼出的气体总量，成人约3-5升，是评估肺功能的重要指标。
+  knowledge:
+    facts:
+    - 肺活量（Vital Capacity, VC）定义：最大吸气后尽力呼出的气体总量。
+    - 成人正常范围：约3-5升。
+    - 与潮气量、每分通气量同属肺功能评估指标。
+    procedures: []
+    caveats:
+    - 肺活量受年龄、性别、身高、体重、训练状态影响，需参考同人群正常值。
+    - 测量需受试者积极配合，技术不佳可能导致结果偏低。
+    - 不能单独用于诊断，需结合其他肺功能指标和临床表现。
+  tags:
+  - 呼吸系统
+  - 肺功能
+  - 肺活量
+  related_skills: []

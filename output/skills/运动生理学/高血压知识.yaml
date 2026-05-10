@@ -1,0 +1,25 @@
+skill:
+  id: skill_85d5b4b1
+  name: 高血压知识
+  version: 1.0.0
+  source:
+    book: 运动生理学
+    chapter: 运动时的心血管反应
+    document_id: c5d4ae30-19c5-40ad-8c21-ee1a2f8bd5cc
+  description: 动脉血压持续升高的疾病状态，通常定义为收缩压≥140 mmHg和/或舒张压≥90 mmHg，是心血管疾病的主要风险因素。
+  knowledge:
+    facts:
+    - 规律有氧运动可降低静息收缩压5-8 mmHg
+    - 运动后存在运动后低血压现象，可持续数小时
+    - 长期运动训练可改善血管弹性，降低外周阻力
+    procedures: []
+    caveats:
+    - 未控制的高血压（收缩压>180或舒张压>110）应避免剧烈运动
+    - 高血压患者运动时需注意避免Valsalva动作（屏气用力）
+    - 运动降压效果需长期坚持，不能替代药物治疗
+  tags:
+  - 运动生理学
+  - 心血管
+  - 慢性病
+  - 运动处方
+  related_skills: []

@@ -1,0 +1,21 @@
+skill:
+  id: skill_fbb18035
+  name: 左心房知识
+  version: 1.0.0
+  source:
+    book: 心血管系统
+    chapter: 心脏的基本功能
+    document_id: 0ff42484-71f5-4ac3-a56b-d4c08456d736
+  description: 心脏的四个腔室之一，位于左上部，接收来自肺静脉的富含氧气的血液。
+  knowledge:
+    facts:
+    - 左心房接收肺静脉回流的氧合血
+    - 左心房收缩将血液泵入左心室
+    procedures: []
+    caveats:
+    - 左心房功能异常可能导致肺静脉高压或房颤
+  tags:
+  - 心血管系统
+  - 心脏
+  - 心房
+  related_skills: []

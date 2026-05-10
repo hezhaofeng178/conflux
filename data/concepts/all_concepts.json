@@ -1,0 +1,206 @@
+[
+  {
+    "id": "concept_3dbbacd4",
+    "name": "心脏",
+    "type": "entity",
+    "source": "心血管系统"
+  },
+  {
+    "id": "concept_e93b5159",
+    "name": "左心房",
+    "type": "entity",
+    "source": "心血管系统"
+  },
+  {
+    "id": "concept_690cf5b6",
+    "name": "左心室",
+    "type": "entity",
+    "source": "心血管系统"
+  },
+  {
+    "id": "concept_6fd50752",
+    "name": "右心房",
+    "type": "entity",
+    "source": "心血管系统"
+  },
+  {
+    "id": "concept_880eefcc",
+    "name": "右心室",
+    "type": "entity",
+    "source": "心血管系统"
+  },
+  {
+    "id": "concept_d9a2a724",
+    "name": "主动脉",
+    "type": "entity",
+    "source": "心血管系统"
+  },
+  {
+    "id": "concept_03568e27",
+    "name": "肺动脉",
+    "type": "entity",
+    "source": "心血管系统"
+  },
+  {
+    "id": "concept_ddce464b",
+    "name": "冠心病",
+    "type": "category",
+    "source": "心血管系统"
+  },
+  {
+    "id": "concept_08aa0c32",
+    "name": "心肌",
+    "type": "entity",
+    "source": "心血管系统"
+  },
+  {
+    "id": "concept_6683d575",
+    "name": "心脏瓣膜疾病",
+    "type": "category",
+    "source": "心血管系统"
+  },
+  {
+    "id": "concept_3db13539",
+    "name": "心率",
+    "type": "entity",
+    "source": "运动生理学"
+  },
+  {
+    "id": "concept_c8a66a3b",
+    "name": "心输出量",
+    "type": "property",
+    "source": "运动生理学"
+  },
+  {
+    "id": "concept_79c4c8be",
+    "name": "血压",
+    "type": "property",
+    "source": "运动生理学"
+  },
+  {
+    "id": "concept_3857f746",
+    "name": "收缩压",
+    "type": "property",
+    "source": "运动生理学"
+  },
+  {
+    "id": "concept_06cfe5a8",
+    "name": "舒张压",
+    "type": "property",
+    "source": "运动生理学"
+  },
+  {
+    "id": "concept_d40f96af",
+    "name": "最大摄氧量",
+    "type": "property",
+    "source": "运动生理学"
+  },
+  {
+    "id": "concept_1dec1635",
+    "name": "每搏输出量",
+    "type": "property",
+    "source": "运动生理学"
+  },
+  {
+    "id": "concept_c99e8969",
+    "name": "运动后低血压",
+    "type": "process",
+    "source": "运动生理学"
+  },
+  {
+    "id": "concept_1e7c93d4",
+    "name": "高血压",
+    "type": "category",
+    "source": "运动生理学"
+  },
+  {
+    "id": "concept_82b9e4b9",
+    "name": "心力衰竭",
+    "type": "category",
+    "source": "运动生理学"
+  },
+  {
+    "id": "concept_2ca5bdfb",
+    "name": "有氧运动",
+    "type": "category",
+    "source": "运动生理学"
+  },
+  {
+    "id": "concept_d7c9392d",
+    "name": "气体交换",
+    "type": "process",
+    "source": "呼吸系统"
+  },
+  {
+    "id": "concept_3b76b8fb",
+    "name": "外呼吸",
+    "type": "process",
+    "source": "呼吸系统"
+  },
+  {
+    "id": "concept_9cb48d09",
+    "name": "内呼吸",
+    "type": "process",
+    "source": "呼吸系统"
+  },
+  {
+    "id": "concept_41bfc332",
+    "name": "肺活量",
+    "type": "property",
+    "source": "呼吸系统"
+  },
+  {
+    "id": "concept_4c828870",
+    "name": "潮气量",
+    "type": "property",
+    "source": "呼吸系统"
+  },
+  {
+    "id": "concept_31ebe8fc",
+    "name": "每分通气量",
+    "type": "property",
+    "source": "呼吸系统"
+  },
+  {
+    "id": "concept_1a64dcea",
+    "name": "呼吸频率",
+    "type": "property",
+    "source": "呼吸系统"
+  },
+  {
+    "id": "concept_d87bbc17",
+    "name": "血氧饱和度",
+    "type": "property",
+    "source": "呼吸系统"
+  },
+  {
+    "id": "concept_08de0a12",
+    "name": "肺水肿",
+    "type": "entity",
+    "source": "呼吸系统"
+  },
+  {
+    "id": "concept_8bd7172d",
+    "name": "低氧血症",
+    "type": "entity",
+    "source": "呼吸系统"
+  },
+  {
+    "id": "concept_5325249a",
+    "name": "肺循环",
+    "type": "process",
+    "source": "呼吸系统"
+  },
+  {
+    "id": "concept_d07fe3ed",
+    "name": "血红蛋白",
+    "type": "entity",
+    "source": "呼吸系统"
+  },
+  {
+    "id": "concept_7722a8f4",
+    "name": "环境氧浓度",
+    "type": "property",
+    "source": "呼吸系统"
+  }
+]

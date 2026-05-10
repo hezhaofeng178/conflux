@@ -1,0 +1,29 @@
+skill:
+  id: skill_54b757f6
+  name: 心功能知识
+  version: 1.0.0
+  source:
+    book: 运动生理学
+    chapter: 运动与心力衰竭
+    document_id: c5d4ae30-19c5-40ad-8c21-ee1a2f8bd5cc
+  description: 评估和改善心脏泵血与血液循环能力，特别针对心衰患者的有氧运动指导。
+  knowledge:
+    facts:
+    - 心功能指心脏泵血和维持血液循环的能力。
+    - 适当有氧运动可改善心衰患者的心功能。
+    - 运动训练可提高心衰患者VO₂max 10-30%。
+    procedures:
+    - trigger: 当需要为心衰患者制定运动康复计划时
+      steps:
+      - 评估患者当前心功能状态和运动风险。
+      - 选择低强度有氧运动如步行或骑车。
+      - 在医疗监护下逐步增加运动强度。
+    caveats:
+    - 运动必须在医疗监护下进行，强度需循序渐进。
+    - 不适用于急性心衰或不稳定期患者。
+  tags:
+  - 运动生理学
+  - 心功能
+  - 心力衰竭
+  - 有氧运动
+  related_skills: []

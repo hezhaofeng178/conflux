@@ -1,0 +1,21 @@
+skill:
+  id: skill_dfcdc643
+  name: 心力衰竭知识
+  version: 1.0.0
+  source:
+    book: 运动生理学
+    chapter: 运动时的心血管反应
+    document_id: c5d4ae30-19c5-40ad-8c21-ee1a2f8bd5cc
+  description: 心脏泵血功能减退的疾病，但现代研究表明适当有氧运动可改善心功能并提高VO₂max。
+  knowledge:
+    facts:
+    - 心脏泵血功能减退的疾病
+    - 适当的有氧运动（如步行、骑车）可以改善心衰患者的心功能
+    - 运动训练可提高心衰患者的VO₂max 10-30%
+    procedures: []
+    caveats:
+    - 过去认为心力衰竭患者应卧床休息，但现代研究表明适当运动有益
+  tags:
+  - 运动生理学
+  - 心血管
+  related_skills: []

@@ -1,0 +1,30 @@
+skill:
+  id: skill_432b10d6
+  name: VO₂max知识
+  version: 1.0.0
+  source:
+    book: 运动生理学
+    chapter: 运动与心力衰竭
+    document_id: c5d4ae30-19c5-40ad-8c21-ee1a2f8bd5cc
+  description: 提供关于最大摄氧量（VO₂max）的定义、决定因素、正常范围及其在心衰患者运动康复中的应用知识。
+  knowledge:
+    facts:
+    - VO₂max是衡量心肺耐力的金标准指标，反映极限运动时心血管系统向组织输送氧气的最大能力。
+    - VO₂max主要取决于心输出量（心率×每搏输出量），其次是肺部气体交换效率和肌肉利用氧气的能力。
+    - 普通成人VO₂max约35-45 ml/kg/min，精英耐力运动员可达70-85 ml/kg/min。
+    - 适当有氧运动可改善心衰患者心功能，运动训练可提高其VO₂max 10-30%。
+    procedures:
+    - trigger: 当用户询问VO₂max的定义、决定因素或正常范围时，或讨论心衰患者的运动康复时。
+      steps:
+      - 解释VO₂max的定义和作为心肺耐力金标准的意义。
+      - 列出决定VO₂max的三个主要因素，强调心输出量的主导作用。
+      - 提供普通成人和精英运动员的典型VO₂max范围。
+      - 若涉及心衰患者，说明有氧运动的益处（提高VO₂max 10-30%）及医疗监护的必要性。
+    caveats:
+    - 心衰患者进行运动训练需在医疗监护下进行，强度应循序渐进。
+  tags:
+  - 运动生理学
+  - 心肺耐力
+  - VO₂max
+  - 心衰康复
+  related_skills: []

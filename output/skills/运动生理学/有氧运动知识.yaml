@@ -1,0 +1,22 @@
+skill:
+  id: skill_7db52d62
+  name: 有氧运动知识
+  version: 1.0.0
+  source:
+    book: 运动生理学
+    chapter: 运动时的心血管反应
+    document_id: c5d4ae30-19c5-40ad-8c21-ee1a2f8bd5cc
+  description: 以有氧代谢为主的运动，对高血压有显著降压效果，如每周150分钟中等强度运动可降低收缩压5-8 mmHg。
+  knowledge:
+    facts:
+    - 以有氧代谢为主的运动
+    - 每周150分钟中等强度运动可降低收缩压5-8 mmHg
+    - 运动后存在'运动后低血压'现象，可持续数小时
+    - 长期运动训练可改善血管弹性，降低外周阻力
+    procedures: []
+    caveats:
+    - 收缩压>180 mmHg或舒张压>110 mmHg时应避免剧烈运动
+  tags:
+  - 运动生理学
+  - 心血管
+  related_skills: []

@@ -1,0 +1,24 @@
+skill:
+  id: skill_565e6632
+  name: 血氧饱和度知识
+  version: 1.0.0
+  source:
+    book: 呼吸系统
+    chapter: 呼吸的基本过程
+    document_id: e446c79c-5d43-43f6-a9f8-92f01304967a
+  description: 血红蛋白与氧气结合的百分比，正常95%-100%，低于90%提示低氧血症
+  knowledge:
+    facts:
+    - SpO2正常范围95%-100%
+    - 低于90%需紧急处理
+    - 影响因素：肺功能、心功能、血红蛋白含量、环境氧浓度
+    procedures: []
+    caveats:
+    - 血氧仪测量受运动、低灌注、指甲油等干扰
+    - 不能替代动脉血气分析
+    - 慢性阻塞性肺病患者可能长期偏低
+  tags:
+  - 呼吸系统
+  - 血氧
+  - 生命体征
+  related_skills: []

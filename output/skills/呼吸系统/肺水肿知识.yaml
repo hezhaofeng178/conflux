@@ -1,0 +1,25 @@
+skill:
+  id: skill_a8c686f7
+  name: 肺水肿知识
+  version: 1.0.0
+  source:
+    book: 呼吸系统
+    chapter: 呼吸的基本过程
+    document_id: e446c79c-5d43-43f6-a9f8-92f01304967a
+  description: 肺部液体异常积聚，常由左心衰引起，导致气体交换障碍
+  knowledge:
+    facts:
+    - 肺水肿常见于左心衰竭
+    - 左心衰时血液在肺部淤积，液体渗入肺泡
+    - 会严重影响呼吸功能
+    - 需紧急处理
+    procedures: []
+    caveats:
+    - 与肺炎、哮喘等其他呼吸困难疾病鉴别
+    - 快速识别并处理，延误可致命
+    - 注意患者有无心衰病史
+  tags:
+  - 呼吸系统
+  - 心血管
+  - 紧急情况
+  related_skills: []

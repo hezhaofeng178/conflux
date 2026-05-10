@@ -1,0 +1,200 @@
+[
+  {
+    "id": "concept_3db13539",
+    "name": "心率",
+    "aliases": [
+      "heart rate"
+    ],
+    "concept_type": "entity",
+    "definition": "心脏每分钟跳动的次数",
+    "description": null,
+    "source_book": "运动生理学",
+    "source_chapter": "运动时的心血管反应",
+    "source_section": null,
+    "source_document_id": null,
+    "domain": "运动生理学",
+    "tags": [],
+    "confidence": 0.8,
+    "extracted_at": null
+  },
+  {
+    "id": "concept_c8a66a3b",
+    "name": "心输出量",
+    "aliases": [
+      "cardiac output"
+    ],
+    "concept_type": "property",
+    "definition": "心脏每分钟泵出的血量，等于心率乘以每搏输出量",
+    "description": null,
+    "source_book": "运动生理学",
+    "source_chapter": "运动时的心血管反应",
+    "source_section": null,
+    "source_document_id": null,
+    "domain": "运动生理学",
+    "tags": [],
+    "confidence": 0.8,
+    "extracted_at": null
+  },
+  {
+    "id": "concept_79c4c8be",
+    "name": "血压",
+    "aliases": [
+      "blood pressure"
+    ],
+    "concept_type": "property",
+    "definition": "血液对血管壁的压力，包括收缩压和舒张压",
+    "description": null,
+    "source_book": "运动生理学",
+    "source_chapter": "运动时的心血管反应",
+    "source_section": null,
+    "source_document_id": null,
+    "domain": "运动生理学",
+    "tags": [],
+    "confidence": 0.8,
+    "extracted_at": null
+  },
+  {
+    "id": "concept_3857f746",
+    "name": "收缩压",
+    "aliases": [
+      "systolic blood pressure"
+    ],
+    "concept_type": "property",
+    "definition": "心脏收缩时动脉的最高压力",
+    "description": null,
+    "source_book": "运动生理学",
+    "source_chapter": "运动时的心血管反应",
+    "source_section": null,
+    "source_document_id": null,
+    "domain": "运动生理学",
+    "tags": [],
+    "confidence": 0.8,
+    "extracted_at": null
+  },
+  {
+    "id": "concept_06cfe5a8",
+    "name": "舒张压",
+    "aliases": [
+      "diastolic blood pressure"
+    ],
+    "concept_type": "property",
+    "definition": "心脏舒张时动脉的最低压力",
+    "description": null,
+    "source_book": "运动生理学",
+    "source_chapter": "运动时的心血管反应",
+    "source_section": null,
+    "source_document_id": null,
+    "domain": "运动生理学",
+    "tags": [],
+    "confidence": 0.8,
+    "extracted_at": null
+  },
+  {
+    "id": "concept_d40f96af",
+    "name": "最大摄氧量",
+    "aliases": [
+      "VO₂max"
+    ],
+    "concept_type": "property",
+    "definition": "极限运动时机体摄取氧气的最大能力",
+    "description": null,
+    "source_book": "运动生理学",
+    "source_chapter": "运动时的心血管反应",
+    "source_section": null,
+    "source_document_id": null,
+    "domain": "运动生理学",
+    "tags": [],
+    "confidence": 0.8,
+    "extracted_at": null
+  },
+  {
+    "id": "concept_1dec1635",
+    "name": "每搏输出量",
+    "aliases": [
+      "stroke volume"
+    ],
+    "concept_type": "property",
+    "definition": "心脏每次搏动泵出的血量",
+    "description": null,
+    "source_book": "运动生理学",
+    "source_chapter": "运动时的心血管反应",
+    "source_section": null,
+    "source_document_id": null,
+    "domain": "运动生理学",
+    "tags": [],
+    "confidence": 0.8,
+    "extracted_at": null
+  },
+  {
+    "id": "concept_c99e8969",
+    "name": "运动后低血压",
+    "aliases": [
+      "post-exercise hypotension"
+    ],
+    "concept_type": "process",
+    "definition": "运动后血压暂时下降的现象",
+    "description": null,
+    "source_book": "运动生理学",
+    "source_chapter": "运动时的心血管反应",
+    "source_section": null,
+    "source_document_id": null,
+    "domain": "运动生理学",
+    "tags": [],
+    "confidence": 0.8,
+    "extracted_at": null
+  },
+  {
+    "id": "concept_1e7c93d4",
+    "name": "高血压",
+    "aliases": [
+      "hypertension"
+    ],
+    "concept_type": "category",
+    "definition": "血压持续偏高的疾病状态",
+    "description": null,
+    "source_book": "运动生理学",
+    "source_chapter": "运动时的心血管反应",
+    "source_section": null,
+    "source_document_id": null,
+    "domain": "运动生理学",
+    "tags": [],
+    "confidence": 0.8,
+    "extracted_at": null
+  },
+  {
+    "id": "concept_82b9e4b9",
+    "name": "心力衰竭",
+    "aliases": [
+      "heart failure"
+    ],
+    "concept_type": "category",
+    "definition": "心脏泵血功能减退的疾病",
+    "description": null,
+    "source_book": "运动生理学",
+    "source_chapter": "运动时的心血管反应",
+    "source_section": null,
+    "source_document_id": null,
+    "domain": "运动生理学",
+    "tags": [],
+    "confidence": 0.8,
+    "extracted_at": null
+  },
+  {
+    "id": "concept_2ca5bdfb",
+    "name": "有氧运动",
+    "aliases": [
+      "aerobic exercise"
+    ],
+    "concept_type": "category",
+    "definition": "以有氧代谢为主的运动",
+    "description": null,
+    "source_book": "运动生理学",
+    "source_chapter": "运动时的心血管反应",
+    "source_section": null,
+    "source_document_id": null,
+    "domain": "运动生理学",
+    "tags": [],
+    "confidence": 0.8,
+    "extracted_at": null
+  }
+]

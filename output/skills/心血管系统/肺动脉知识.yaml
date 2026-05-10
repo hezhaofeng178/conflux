@@ -1,0 +1,23 @@
+skill:
+  id: skill_6148cded
+  name: 肺动脉知识
+  version: 1.0.0
+  source:
+    book: 心血管系统
+    chapter: 心脏的基本功能
+    document_id: 0ff42484-71f5-4ac3-a56b-d4c08456d736
+  description: 将缺氧血液从右心室输送到肺部进行气体交换的动脉。
+  knowledge:
+    facts:
+    - 肺动脉是动脉，但输送缺氧血（通常动脉输氧血）。
+    - 起源自右心室，分支进入左右肺。
+    - 在肺泡处进行气体交换，血液获氧排二氧化碳。
+    procedures: []
+    caveats:
+    - 不要与肺静脉混淆（肺静脉输氧血）。
+    - 肺动脉压力低于体循环动脉。
+  tags:
+  - 心血管系统
+  - 动脉
+  - 肺循环
+  related_skills: []

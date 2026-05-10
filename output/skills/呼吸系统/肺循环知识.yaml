@@ -1,0 +1,25 @@
+skill:
+  id: skill_f7776da2
+  name: 肺循环知识
+  version: 1.0.0
+  source:
+    book: 呼吸系统
+    chapter: 呼吸的基本过程
+    document_id: e446c79c-5d43-43f6-a9f8-92f01304967a
+  description: 右心室泵血到肺动脉，经肺泡气体交换后回左心房的过程。
+  knowledge:
+    facts:
+    - 肺循环由右心室泵血到肺动脉
+    - 气体交换在肺泡进行
+    - 含氧血液经肺静脉回到左心房
+    - 心输出量下降会导致肺部灌注不足
+    - 左心衰可致肺水肿
+    procedures: []
+    caveats:
+    - 肺循环与体循环不同，压力较低
+    - 肺循环阻力增加可导致肺动脉高压
+  tags:
+  - 循环系统
+  - 呼吸系统
+  - 心血管
+  related_skills: []

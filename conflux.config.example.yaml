@@ -1,0 +1,55 @@
+# Conflux 配置文件示例
+# 复制此文件为 conflux.config.yaml 并根据需要修改
+
+project:
+  name: "我的知识库"
+  language: "zh-CN"
+  description: "个人知识管理项目"
+
+input:
+  sources_dir: "./sources"
+  supported_formats: ["md", "epub", "pdf"]
+
+output:
+  skills_dir: "./output/skills"
+  vault_dir: "./output/vault"
+  # Obsidian Vault 设置
+  vault:
+    create_canvas: true          # 是否生成 Canvas 文件
+    create_index: true           # 是否生成索引页
+    link_style: "wikilink"       # wikilink | markdown
+
+engine:
+  llm:
+    provider: "openai"           # openai | anthropic | local | zhipu
+    model: "gpt-4o"
+    api_key_env: "CONFLUX_LLM_KEY"
+    temperature: 0.3
+    max_retries: 3
+
+  embedding:
+    provider: "openai"
+    model: "text-embedding-3-large"
+    dimensions: 1536
+
+  conflict_detection:
+    enabled: true
+    sensitivity: "medium"        # low | medium | high
+    auto_resolve_threshold: 0.95
+    min_claim_confidence: 0.7
+
+  networking:
+    similarity_threshold: 0.85
+    max_cross_links_per_node: 10
+    enable_transitive_links: true
+
+storage:
+  vector_db: "chromadb"          # chromadb | qdrant
+  graph_db: "networkx"           # networkx | neo4j
+  persistence_dir: "./data/"
+
+# 日志配置
+logging:
+  level: "INFO"                  # DEBUG | INFO | WARNING | ERROR
+  file: "./logs/conflux.log"
+  rich_console: true

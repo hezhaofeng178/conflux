@@ -1,0 +1,24 @@
+skill:
+  id: skill_921cdb7f
+  name: 运动后低血压知识
+  version: 1.0.0
+  source:
+    book: 运动生理学
+    chapter: 运动时的心血管反应
+    document_id: c5d4ae30-19c5-40ad-8c21-ee1a2f8bd5cc
+  description: 运动后血压暂时低于运动前水平的现象，可持续数小时，是运动降压效应的重要机制。
+  knowledge:
+    facts:
+    - 中等强度有氧运动后收缩压可降低5-8 mmHg
+    - 运动后低血压可持续数小时
+    - 长期运动训练可改善血管弹性，降低外周阻力
+    procedures: []
+    caveats:
+    - 收缩压>180 mmHg或舒张压>110 mmHg时应避免剧烈运动
+    - 运动后低血压可能引起头晕、乏力，需适当休息和补水
+  tags:
+  - 运动生理学
+  - 心血管
+  - 高血压
+  - 运动康复
+  related_skills: []

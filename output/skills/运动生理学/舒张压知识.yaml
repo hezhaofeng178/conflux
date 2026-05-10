@@ -1,0 +1,25 @@
+skill:
+  id: skill_76d30e6c
+  name: 舒张压知识
+  version: 1.0.0
+  source:
+    book: 运动生理学
+    chapter: 运动时的心血管反应
+    document_id: c5d4ae30-19c5-40ad-8c21-ee1a2f8bd5cc
+  description: 心脏舒张时动脉的最低压力，运动时变化不大，是评估血管阻力和心脏负荷的指标。
+  knowledge:
+    facts:
+    - 正常安静状态舒张压低于80 mmHg
+    - 运动时舒张压变化不大
+    - 收缩压>180 mmHg或舒张压>110 mmHg时应避免剧烈运动
+    - 长期运动可改善血管弹性
+    - 舒张压升高提示外周阻力增大
+    procedures: []
+    caveats:
+    - 舒张压>110 mmHg时为高血压急症，需立即就医
+    - 运动时舒张压显著升高可能提示血管阻力异常
+  tags:
+  - 运动生理学
+  - 心血管
+  - 血压
+  related_skills: []
